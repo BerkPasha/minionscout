@@ -19,7 +19,7 @@ The code keeps its original names: the Python distribution `minion-upgrade-scout
 > | Clean install | **recorded results:** [`evidence/phase6/CLEAN_INSTALL.md`](evidence/phase6/CLEAN_INSTALL.md) (157 passed, 2 skipped) |
 > | Targeted live test (`tests/test_live.py`) | **not run** |
 > | Demo video | **not recorded** |
-> | Public repository | <https://github.com/BerkPasha/minionscout> (public; created 2026-10-29). Verification of the initial push is recorded in [PROJECT_STATUS.md](PROJECT_STATUS.md). |
+> | Public repository | **published:** <https://github.com/BerkPasha/minionscout> (public). Verified 2026-10-29: remote `master` holds initial commit `e509fbf`, and the README and retained evidence download byte-identical without signing in. See [PROJECT_STATUS.md](PROJECT_STATUS.md#publication). |
 > | License | **unresolved owner decision.** No license is selected. The hackathon rules ask for "properly licensed code and data", but do not mandate a `LICENSE` file or a particular license. |
 >
 > Details: [docs/SUBMISSION.md](docs/SUBMISSION.md).

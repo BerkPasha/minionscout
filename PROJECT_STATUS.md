@@ -13,11 +13,10 @@ original package, module and CLI names.*
     No release blocker was found, and no code was changed.
   - Submission material: `docs/SUBMISSION.md`, a judge-oriented README, `docs/REFERENCE.md` (the detailed reference,
     moved out of the README), and a final `docs/DEMO_SCRIPT.md`.
-  - **Publication:** the public GitHub repository <https://github.com/BerkPasha/minionscout> was created on
-    2026-10-29, and the visible project name is now **MinionScout**.
+  - **Publication:** the public GitHub repository <https://github.com/BerkPasha/minionscout> was created and
+    published on 2026-10-29 (verified; see *Publication* below). The visible project name is now **MinionScout**.
     - A `.gitattributes` (`* -text`) stores every file byte-for-byte, so the published evidence keeps its sha256.
       Git's system config here has `core.autocrlf=true`, and 46 files contain CRLF.
-    - Verification of the initial push: see *Publication* below.
 - **Phase 5 result:**
   - **Live validation: SUCCESS in `openai-attempt-5`**, the first real run after the F9 transport fix.
     - Real OpenAI `gpt-4.1-mini`; `analysis/2`, `status: success`, `transport_problems: []`.
@@ -47,7 +46,7 @@ original package, module and CLI names.*
 | Item | State | Decision needed from |
 | --- | --- | --- |
 | License | **none selected.** There is no `LICENSE` file, and `pyproject.toml` has no `license` field. Both hackathon pages (re-checked 2026-10-29) say only "Use properly licensed code and data, disclose external dependencies, keep secrets and private data out of public submissions". There is no explicit `LICENSE`-file or specific-license requirement. | the owner: an unresolved decision, not an established blocker |
-| Git repository | branch `master`; remote `origin` = `https://github.com/BerkPasha/minionscout.git`; initial commit and push: see *Publication* below | — |
+| Git repository | branch `master`, tracking `origin/master`; remote `origin` = `https://github.com/BerkPasha/minionscout.git`; initial commit `e509fbf`, published and verified (see *Publication*) | — |
 | Published files | 223: the 222 project files reviewed in Phase 6, plus `.gitattributes`. A scan found no home-directory paths, user names, e-mail addresses, hostnames or keys in their contents; the only key-like string is the labelled `sk-MOCKED-not-a-real-key-…` test value. `.venv/`, `.openminion/`, `.scout-home/`, `*.egg-info/`, `__pycache__/`, `demo/` and `scout-reports/` are gitignored. | — |
 | Git identity | the existing global `user.name` and `user.email` were used for the commit, as the owner authorized; they are public in the commit metadata | — |
 | Public repository URL | <https://github.com/BerkPasha/minionscout> (public) | — |
@@ -59,8 +58,18 @@ original package, module and CLI names.*
 
 - **Repository:** <https://github.com/BerkPasha/minionscout>, public, created 2026-10-29 under the owner's personal
   account.
-- **Initial commit:** pushed to `master`. **When this commit was made, the push had not yet been verified against
-  GitHub.** The verification is recorded in the following commit.
+- **Initial commit:** `e509fbfe619cb8bb6fb91c3a07cb1318fdf9dbb8` on `master`, 223 files. It was pushed without
+  force to an empty, newly created repository.
+- **Verified 2026-10-29, against GitHub:**
+  - `git ls-remote origin refs/heads/master` equals the local commit;
+  - the GitHub API reports `visibility=PUBLIC`, default branch `master`, and a 223-file tree (not truncated);
+  - `https://github.com/BerkPasha/minionscout` returns HTTP 200 without signing in;
+  - 16 files downloaded anonymously from `raw.githubusercontent.com` at that commit are byte-identical to the local
+    files: the README, `docs/SUBMISSION.md`, the retained comparison's `report.json` (sha256 `8b82e734…0fc93`) and
+    `report.md`, the transport-verification summary, the Phase 6 clean-install log and record, and all 9 files of
+    `openai-attempt-5`.
+  - Before the commit, every staged blob was checked to equal the raw file bytes (`.gitattributes`: `* -text`).
+- **Follow-up commit:** this status update. It changes only this file, `README.md` and `docs/SUBMISSION.md`.
 - **Not done:** the hackathon submission pull request and the demo video.
 
 ## `openai-attempt-5`: SUCCESS (first accepted model-backed analysis), preserved unchanged

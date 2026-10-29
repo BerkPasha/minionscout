@@ -13,7 +13,7 @@
 | Demo video URL (1–5 minutes) | **PENDING: not recorded.** The plan is [DEMO_SCRIPT.md](DEMO_SCRIPT.md). |
 | License | **UNRESOLVED OWNER DECISION:** no license is selected, and there is no `LICENSE` file. The rules say "Use properly licensed code and data, disclose external dependencies, keep secrets and private data out of public submissions". They do not explicitly mandate a separate `LICENSE` file or a particular license. |
 | External dependencies | **disclosed:** `pyproject.toml` (`openminion==0.1.15`, `pytest` for dev) and `requirements-lock.txt` (the full pinned set). External services: PyPI (for `compare`) and the OpenAI API (for `analyze`, attempt-5). |
-| Public repository URL | <https://github.com/BerkPasha/minionscout> (public; created 2026-10-29). Verification of the initial push is recorded in [PROJECT_STATUS.md](../PROJECT_STATUS.md). |
+| Public repository URL | **PUBLISHED:** <https://github.com/BerkPasha/minionscout> (public). Verified 2026-10-29: initial commit `e509fbf` on `master`; README and evidence publicly downloadable ([details](../PROJECT_STATUS.md#publication)). |
 | Submission (pull request) | **PENDING.** Both official pages, re-checked 2026-10-29, say to "Link your public project and submission materials in a pull request to the dedicated Hackathon #5 repository". They also say "The repository URL will be added before kickoff"; it is not listed yet. The cutoff is on [DoraHacks](https://dorahacks.io/hackathon/2418/detail). |
 | "Building Blocks Tested" and "What We Learned" notes | **written:** [BUILDING_BLOCKS_TESTED.md](BUILDING_BLOCKS_TESTED.md), [WHAT_WE_LEARNED.md](WHAT_WE_LEARNED.md) |
 
