@@ -1,0 +1,84 @@
+{
+  "source_report": "report.json",
+  "source_schema": "minion-upgrade-scout/compare/1",
+  "source_sha256": "9591016d28b76597b14c1808f9b5048c26e2511bd0aac4c8dcca617e7bc2fa4e",
+  "stored": {
+    "verdict": "inconclusive",
+    "exit_code": 3,
+    "complete": false
+  },
+  "recomputed": {
+    "verdict": "inconclusive",
+    "exit_code": 3,
+    "complete": false,
+    "regressions": [],
+    "coverage_gaps": [],
+    "environment_failures": [],
+    "incomplete": [
+      {
+        "role": "baseline",
+        "version": "0.1.15",
+        "kind": "stage_timeout",
+        "stage": "surface",
+        "detail": "collect_surface",
+        "evidence": "baseline-0.1.15/surface.log"
+      },
+      {
+        "role": "baseline",
+        "version": "0.1.15",
+        "kind": "stage_timeout",
+        "stage": "echo_turn",
+        "detail": "import",
+        "evidence": "baseline-0.1.15/echo_turn.log"
+      },
+      {
+        "role": "baseline",
+        "version": "0.1.15",
+        "kind": "stage_timeout",
+        "stage": "minimal_config",
+        "detail": "import",
+        "evidence": "baseline-0.1.15/minimal_config.log"
+      },
+      {
+        "role": "candidate",
+        "version": "0.1.15",
+        "kind": "stage_timeout",
+        "stage": "surface",
+        "detail": "collect_surface",
+        "evidence": "candidate-0.1.15/surface.log"
+      },
+      {
+        "role": "candidate",
+        "version": "0.1.15",
+        "kind": "stage_timeout",
+        "stage": "echo_turn",
+        "detail": "import",
+        "evidence": "candidate-0.1.15/echo_turn.log"
+      },
+      {
+        "role": "candidate",
+        "version": "0.1.15",
+        "kind": "stage_timeout",
+        "stage": "minimal_config",
+        "detail": "import",
+        "evidence": "candidate-0.1.15/minimal_config.log"
+      }
+    ],
+    "behavior": [
+      {
+        "probe": "echo_turn",
+        "baseline": null,
+        "candidate": null,
+        "classification": "not_comparable"
+      },
+      {
+        "probe": "minimal_config",
+        "baseline": null,
+        "candidate": null,
+        "classification": "not_comparable"
+      }
+    ]
+  },
+  "verdict_changed": false,
+  "matches_stored_comparison": false
+}

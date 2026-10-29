@@ -1,0 +1,229 @@
+{
+  "schema": "minion-upgrade-scout/analysis/1",
+  "generated_at": "2026-10-29T15:20:41+00:00",
+  "tool_version": "0.2.0",
+  "status": "failed",
+  "failure_reasons": [
+    "output_invalid",
+    "tool_not_executed"
+  ],
+  "validation_problems": [],
+  "input": {
+    "report": "evidence\\phase3\\compare\\0.1.8-vs-0.1.15\\report.json",
+    "note": "fact evidence paths are relative to the directory that holds this report",
+    "report_sha256": "8b82e734b19d99b00f4e2d0eca44807f0ffeb6efa3660fa1743afc68a8e0fc93",
+    "evidence_files": [
+      {
+        "path": "baseline-0.1.8/echo_turn.json",
+        "sha256": "b7084db0cd59a53daaadc2bebf54d38dc5cdd281abb6571565866ea9b4a6310d"
+      },
+      {
+        "path": "baseline-0.1.8/environment.json",
+        "sha256": "23e4544dbd276ab88aace7ffe66b32d1aa4f1e93cbaeb6cd653f99c2c6d850a0"
+      },
+      {
+        "path": "baseline-0.1.8/minimal_config.json",
+        "sha256": "79f069ce3d35867b0ab62f5bb1fd6504f8101e75acfb189e2a2c1db9c7c9e0d0"
+      },
+      {
+        "path": "baseline-0.1.8/preflight.json",
+        "sha256": "03f906c64d7c4034ec8d8201af60712e2c7ff5a87dea2a05cf9f5623461ca32e"
+      },
+      {
+        "path": "baseline-0.1.8/surface.json",
+        "sha256": "b3fd099d4835ca80d61a64d5456b587e03fc3ae99c905261cdd69259fbb7eb5b"
+      },
+      {
+        "path": "candidate-0.1.15/echo_turn.json",
+        "sha256": "7a503f520bace789da250c87f871028283f1e439722c573e24b325a1d63aaf27"
+      },
+      {
+        "path": "candidate-0.1.15/environment.json",
+        "sha256": "5721f2196af6895cb6985f7853e49536cb343c674027a74549c3dc0d6602210b"
+      },
+      {
+        "path": "candidate-0.1.15/minimal_config.json",
+        "sha256": "e5c4ab884a14f2d404e10f25f242d2be69ab823f13557150e90f475a34abd040"
+      },
+      {
+        "path": "candidate-0.1.15/preflight.json",
+        "sha256": "9e399e6d5dbe6d4034cdbe2ced266b91a153a1d792e7ac89ba55169a3e9f1325"
+      },
+      {
+        "path": "candidate-0.1.15/surface.json",
+        "sha256": "ae73fc27f0d7ac469792082140d29c61b959ec04e5590cdb9a64d6315bbaff52"
+      },
+      {
+        "path": "report.json",
+        "sha256": "8b82e734b19d99b00f4e2d0eca44807f0ffeb6efa3660fa1743afc68a8e0fc93"
+      }
+    ],
+    "comparison": {
+      "baseline": "0.1.8",
+      "candidate": "0.1.15"
+    },
+    "deterministic_verdict": "compatible",
+    "exit_code": 0,
+    "complete": true
+  },
+  "sdk": {
+    "openminion_version": "0.1.15"
+  },
+  "configured": {
+    "provider": "openai",
+    "model": "gpt-4.1-mini",
+    "note": "configured identity; compare with the runtime metadata below",
+    "credential_env": "OPENAI_API_KEY"
+  },
+  "runtime": null,
+  "tool_execution": {
+    "tool": "comparison_evidence",
+    "python_invocations": 0,
+    "invocations": [],
+    "runtime_reported_tool_calls": "not reported"
+  },
+  "limitations": [
+    "The comparison's echo-provider probes make no model call: they prove neither real model inference nor model-driven tool execution.",
+    "Conclusions cover only the probes listed here: the public exports of openminion and openminion.api, the signatures of 6 entry points, one echo-provider Agent.run with default_channel set, and the documented minimal config without default_channel.",
+    "The echo provider makes no model call. These results prove neither real model inference nor model-driven tool execution; the forced tool is attached, and tool_calls is recorded per version.",
+    "Added exports and signature differences are reported as facts. Only removed exports, entry points or parameters, and newly required parameters, count as API regressions; other signature changes need review.",
+    "An export root or entry point that could not be measured in a version is a coverage gap: the comparison is incomplete for it, and it is not counted as a regression.",
+    "Providers, network, memory, skills, tasks, delegation and permissions are not exercised."
+  ],
+  "brief": null,
+  "facts": [
+    {
+      "id": "V1",
+      "statement": "Deterministic verdict for openminion 0.1.8 -> 0.1.15: compatible (exit code 0); comparison complete: True.",
+      "evidence": [
+        "report.json"
+      ]
+    },
+    {
+      "id": "S1",
+      "statement": "Conclusions cover only the probes listed here: the public exports of openminion and openminion.api, the signatures of 6 entry points, one echo-provider Agent.run with default_channel set, and the documented minimal config without default_channel.",
+      "evidence": [
+        "report.json"
+      ]
+    },
+    {
+      "id": "S2",
+      "statement": "The echo provider makes no model call. These results prove neither real model inference nor model-driven tool execution; the forced tool is attached, and tool_calls is recorded per version.",
+      "evidence": [
+        "report.json"
+      ]
+    },
+    {
+      "id": "S3",
+      "statement": "Added exports and signature differences are reported as facts. Only removed exports, entry points or parameters, and newly required parameters, count as API regressions; other signature changes need review.",
+      "evidence": [
+        "report.json"
+      ]
+    },
+    {
+      "id": "S4",
+      "statement": "An export root or entry point that could not be measured in a version is a coverage gap: the comparison is incomplete for it, and it is not counted as a regression.",
+      "evidence": [
+        "report.json"
+      ]
+    },
+    {
+      "id": "S5",
+      "statement": "Providers, network, memory, skills, tasks, delegation and permissions are not exercised.",
+      "evidence": [
+        "report.json"
+      ]
+    },
+    {
+      "id": "P1",
+      "statement": "The baseline requested openminion 0.1.8; installed 0.1.8; imported __version__ 0.1.8; Python 3.13.5 on Windows-11-10.0.26200-SP0; environment ok.",
+      "evidence": [
+        "baseline-0.1.8/environment.json",
+        "baseline-0.1.8/preflight.json"
+      ]
+    },
+    {
+      "id": "P2",
+      "statement": "The candidate requested openminion 0.1.15; installed 0.1.15; imported __version__ 0.1.15; Python 3.13.5 on Windows-11-10.0.26200-SP0; environment ok.",
+      "evidence": [
+        "candidate-0.1.15/environment.json",
+        "candidate-0.1.15/preflight.json"
+      ]
+    },
+    {
+      "id": "X1",
+      "statement": "Exports of openminion: 12 names in 0.1.8, 12 in 0.1.15; added none; removed none.",
+      "evidence": [
+        "baseline-0.1.8/surface.json",
+        "candidate-0.1.15/surface.json"
+      ]
+    },
+    {
+      "id": "X2",
+      "statement": "Exports of openminion.api: 15 names in 0.1.8, 15 in 0.1.15; added none; removed none.",
+      "evidence": [
+        "baseline-0.1.8/surface.json",
+        "candidate-0.1.15/surface.json"
+      ]
+    },
+    {
+      "id": "G1",
+      "statement": "Entry-point signatures identical in both versions: openminion.Agent, openminion.Agent.run, openminion.Agent.run_stream, openminion.tool, openminion.APIRuntime.from_config_path, openminion.APIRuntime.run_turn.",
+      "evidence": [
+        "baseline-0.1.8/surface.json",
+        "candidate-0.1.15/surface.json"
+      ]
+    },
+    {
+      "id": "B1",
+      "statement": "Echo contract (completed, echoed_message, echo_provider, session_preserved): baseline contract_met, candidate contract_met; failed checks {'baseline': [], 'candidate': []}; classification unchanged.",
+      "evidence": [
+        "baseline-0.1.8/echo_turn.json",
+        "candidate-0.1.15/echo_turn.json"
+      ]
+    },
+    {
+      "id": "B2",
+      "statement": "Echo telemetry (no model call): baseline llm_calls=1 tool_calls=0 input_tokens=0 output_tokens=0; candidate llm_calls=1 tool_calls=0 input_tokens=0 output_tokens=0.",
+      "evidence": [
+        "baseline-0.1.8/echo_turn.json",
+        "candidate-0.1.15/echo_turn.json"
+      ]
+    },
+    {
+      "id": "B3",
+      "statement": "Documented minimal config without default_channel: baseline rejected_invalid_channel, candidate rejected_invalid_channel (unchanged); candidate error: inbound authenticity denied (reason=invalid_channel, mode=warn).",
+      "evidence": [
+        "baseline-0.1.8/minimal_config.json",
+        "candidate-0.1.15/minimal_config.json"
+      ]
+    }
+  ],
+  "worker": {
+    "command": [
+      "~\\OneDrive\\Masa\u00fcst\u00fc\\cortensor-upgrade-scout\\.venv\\Scripts\\python.exe",
+      "-I",
+      "-X",
+      "utf8",
+      "-m",
+      "upgrade_scout.analysis_worker",
+      "~\\AppData\\Local\\mus\\work\\analysis-d1a05737\\request.json"
+    ],
+    "timeout_seconds": 600.0,
+    "log": "worker.log",
+    "status": "ok",
+    "returncode": 0,
+    "seconds": 10.912,
+    "log_tail": []
+  },
+  "elapsed_seconds": 10.912,
+  "usage": {
+    "available": false,
+    "note": "the runtime returned no stats: missing telemetry, not zero usage"
+  },
+  "error": {
+    "type": "AgentOutputValidationError",
+    "message": "Reply did not validate against UpgradeBrief: 1 validation error for UpgradeBrief\n  Invalid JSON: expected value at line 1 column 1 [type=json_invalid, input_value='scout: Policy confirmati...r no or deny to cancel.', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/json_invalid"
+  },
+  "rejected_output": "worker/rejected_output.json"
+}

@@ -1,0 +1,8 @@
+{
+  "complete": false,
+  "current_step": "collect_surface",
+  "probe_schema": 1,
+  "requested_version": "0.1.15",
+  "stage": "surface",
+  "started_at": "2026-10-29T13:53:54+00:00"
+}

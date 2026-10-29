@@ -1,0 +1,71 @@
+{
+  "note": "Model output that was NOT accepted as a brief; kept for inspection only.",
+  "output": {
+    "verdict": "compatible (exit code 0); comparison complete: True.",
+    "summary": "The upgrade from OpenMinion SDK version 0.1.8 to 0.1.15 is deemed compatible based on the probes conducted. The comparison covered public exports, APIs, multiple entry points, and an echo-provider Agent.run test without real model calls. There are added exports and signature differences that do not break backward compatibility. The results are constrained by echo-provider limitations.",
+    "observed": [
+      {
+        "statement": "The upgrade proves compatibility with exit code 0 and complete comparison coverage between versions 0.1.8 and 0.1.15.",
+        "evidence": [
+          "V1"
+        ]
+      },
+      {
+        "statement": "The comparison measures public exports of openminion and openminion.api, signatures of 6 entry points, and one echo-provider Agent.run using default_channel.",
+        "evidence": [
+          "S1"
+        ]
+      },
+      {
+        "statement": "The echo provider runs without making real model calls, capturing forced tool use and tool_calls record per version.",
+        "evidence": [
+          "S2"
+        ]
+      },
+      {
+        "statement": "Added exports and signature differences are reported, but no removals or newly required parameters were found constituting API regressions.",
+        "evidence": [
+          "S3"
+        ]
+      }
+    ],
+    "untested": [
+      {
+        "statement": "The echo-provider probes prove neither real model inference nor model-driven tool execution.",
+        "evidence": [
+          "S2"
+        ]
+      },
+      {
+        "statement": "Coverage gaps exist when export roots or entry points were not measurable in either version, leaving certain areas unvalidated.",
+        "evidence": [
+          "S4"
+        ]
+      }
+    ],
+    "rough_edges": [],
+    "next_checks": [
+      {
+        "action": "Test the upgrade with real model inference calls and real model-driven tool executions.",
+        "reason": "Current probes used an echo provider without real model calls, so the upgrade's compatibility in real inference scenarios is still unknown.",
+        "evidence": [
+          "S2"
+        ]
+      },
+      {
+        "action": "Review signature changes reported as not regressions to ensure there are no functional incompatibilities.",
+        "reason": "Some signature changes other than removals or newly required parameters need careful review despite not being flagged as regressions.",
+        "evidence": [
+          "S3"
+        ]
+      },
+      {
+        "action": "Fill coverage gaps by measuring any export roots or entry points that were not tested in one or both versions.",
+        "reason": "Unmeasured exports and entry points represent blind spots in the compatibility verification.",
+        "evidence": [
+          "S4"
+        ]
+      }
+    ]
+  }
+}

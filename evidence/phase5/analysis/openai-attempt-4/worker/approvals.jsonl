@@ -1,0 +1,1 @@
+{"at": "2026-10-29T18:13:07.699+00:00", "tool": "comparison_evidence", "args": "{}", "approval_id": "call_xyAnzBSfGGPpFQQUZjx2nHPA", "decision": "allow_once", "reason": "bound evidence tool with empty arguments: returns the validated facts and appends its audit line (a local write)"}

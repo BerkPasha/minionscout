@@ -1,0 +1,182 @@
+{
+  "schema": "minion-upgrade-scout/compare/1",
+  "generated_at": "2026-10-29T13:54:03+00:00",
+  "tool_version": "0.2.0",
+  "controller": {
+    "python": "3.13.5",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "request": {
+    "baseline": "0.1.15",
+    "candidate": "0.1.15",
+    "timeouts_seconds": {
+      "venv": 300,
+      "install": 900,
+      "preflight": 60,
+      "probe": 1.0
+    },
+    "state_root": "~\\AppData\\Local\\mus",
+    "probe_session_id": "upgrade-scout-probe"
+  },
+  "scope": [
+    "Conclusions cover only the probes listed here: the public exports of openminion and openminion.api, the signatures of 6 entry points, one echo-provider Agent.run with default_channel set, and the documented minimal config without default_channel.",
+    "The echo provider makes no model call. These results prove neither real model inference nor model-driven tool execution; the forced tool is attached, and tool_calls is recorded per version.",
+    "Added exports and signature differences are reported as facts. Only removed exports, entry points or parameters, and newly required parameters, count as API regressions; other signature changes need review.",
+    "Providers, network, memory, skills, tasks, delegation and permissions are not exercised."
+  ],
+  "versions": {
+    "baseline": {
+      "requested_version": "0.1.15",
+      "installed_version": "0.1.15",
+      "imported_version": null,
+      "python": "3.13.5",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "environment": {
+        "status": "ok",
+        "failure": null,
+        "env_dir": "~\\AppData\\Local\\mus\\envs\\0.1.15"
+      },
+      "evidence_dir": "baseline-0.1.15",
+      "stages": {
+        "preflight": {
+          "status": "completed",
+          "evidence": "preflight.json",
+          "seconds": 0.261,
+          "log": "preflight.log"
+        },
+        "surface": {
+          "status": "timeout",
+          "last_step": "collect_surface",
+          "evidence": "surface.json",
+          "seconds": 1.208,
+          "log": "surface.log"
+        },
+        "echo_turn": {
+          "status": "timeout",
+          "last_step": "import",
+          "evidence": "echo_turn.json",
+          "seconds": 1.196,
+          "log": "echo_turn.log"
+        },
+        "minimal_config": {
+          "status": "timeout",
+          "last_step": "import",
+          "evidence": "minimal_config.json",
+          "seconds": 1.199,
+          "log": "minimal_config.log"
+        }
+      }
+    },
+    "candidate": {
+      "requested_version": "0.1.15",
+      "installed_version": "0.1.15",
+      "imported_version": null,
+      "python": "3.13.5",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "environment": {
+        "status": "ok",
+        "failure": null,
+        "env_dir": "~\\AppData\\Local\\mus\\envs\\0.1.15"
+      },
+      "evidence_dir": "candidate-0.1.15",
+      "stages": {
+        "preflight": {
+          "status": "completed",
+          "evidence": "preflight.json",
+          "seconds": 0.264,
+          "log": "preflight.log"
+        },
+        "surface": {
+          "status": "timeout",
+          "last_step": "collect_surface",
+          "evidence": "surface.json",
+          "seconds": 1.215,
+          "log": "surface.log"
+        },
+        "echo_turn": {
+          "status": "timeout",
+          "last_step": "import",
+          "evidence": "echo_turn.json",
+          "seconds": 1.206,
+          "log": "echo_turn.log"
+        },
+        "minimal_config": {
+          "status": "timeout",
+          "last_step": "import",
+          "evidence": "minimal_config.json",
+          "seconds": 1.208,
+          "log": "minimal_config.log"
+        }
+      }
+    }
+  },
+  "regressions": [],
+  "environment_failures": [],
+  "incomplete": [
+    {
+      "role": "baseline",
+      "version": "0.1.15",
+      "kind": "stage_timeout",
+      "stage": "surface",
+      "detail": "collect_surface",
+      "evidence": "baseline-0.1.15/surface.log"
+    },
+    {
+      "role": "baseline",
+      "version": "0.1.15",
+      "kind": "stage_timeout",
+      "stage": "echo_turn",
+      "detail": "import",
+      "evidence": "baseline-0.1.15/echo_turn.log"
+    },
+    {
+      "role": "baseline",
+      "version": "0.1.15",
+      "kind": "stage_timeout",
+      "stage": "minimal_config",
+      "detail": "import",
+      "evidence": "baseline-0.1.15/minimal_config.log"
+    },
+    {
+      "role": "candidate",
+      "version": "0.1.15",
+      "kind": "stage_timeout",
+      "stage": "surface",
+      "detail": "collect_surface",
+      "evidence": "candidate-0.1.15/surface.log"
+    },
+    {
+      "role": "candidate",
+      "version": "0.1.15",
+      "kind": "stage_timeout",
+      "stage": "echo_turn",
+      "detail": "import",
+      "evidence": "candidate-0.1.15/echo_turn.log"
+    },
+    {
+      "role": "candidate",
+      "version": "0.1.15",
+      "kind": "stage_timeout",
+      "stage": "minimal_config",
+      "detail": "import",
+      "evidence": "candidate-0.1.15/minimal_config.log"
+    }
+  ],
+  "exports": null,
+  "signatures": null,
+  "behavior": [
+    {
+      "probe": "echo_turn",
+      "required": true,
+      "classification": "not_comparable"
+    },
+    {
+      "probe": "minimal_config",
+      "required": false,
+      "classification": "not_comparable"
+    }
+  ],
+  "complete": false,
+  "verdict": "inconclusive",
+  "exit_code": 3
+}

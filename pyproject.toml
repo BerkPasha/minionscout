@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "minion-upgrade-scout"
+version = "0.2.0"
+description = "OpenMinion-powered tool that checks agent compatibility across OpenMinion SDK versions."
+readme = "README.md"
+requires-python = ">=3.11"
+# SDK of the controller environment (the scout agent itself). Keep in sync with
+# upgrade_scout.BASELINE_SDK_VERSION. `compare` installs its versions in separate venvs.
+dependencies = ["openminion==0.1.15"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<9"]
+
+[tool.setuptools]
+packages = ["upgrade_scout"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "runtime: starts the OpenMinion runtime in-process (needs a working asyncio loop); deselect with -m 'not runtime'",
+]
+# Dump every thread's stack if a test runs longer than this, so a stall leaves evidence.
+faulthandler_timeout = 300

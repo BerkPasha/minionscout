@@ -1,0 +1,17 @@
+{
+  "complete": false,
+  "config": {
+    "agents": {
+      "default": {
+        "name": "default",
+        "provider": "echo"
+      }
+    },
+    "default_agent": "default"
+  },
+  "current_step": "import",
+  "probe_schema": 1,
+  "requested_version": "0.1.15",
+  "stage": "minimal_config",
+  "started_at": "2026-10-29T13:54:02+00:00"
+}

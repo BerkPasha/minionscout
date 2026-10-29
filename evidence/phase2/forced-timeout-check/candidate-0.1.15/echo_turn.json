@@ -1,0 +1,18 @@
+{
+  "complete": false,
+  "config": {
+    "agents": {
+      "scout": {
+        "default_channel": "console",
+        "name": "scout",
+        "provider": "echo"
+      }
+    },
+    "default_agent": "scout"
+  },
+  "current_step": "import",
+  "probe_schema": 1,
+  "requested_version": "0.1.15",
+  "stage": "echo_turn",
+  "started_at": "2026-10-29T13:54:00+00:00"
+}

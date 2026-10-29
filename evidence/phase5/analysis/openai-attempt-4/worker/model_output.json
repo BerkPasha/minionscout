@@ -1,0 +1,44 @@
+{
+  "note": "Raw model output, exactly as returned (model-written). The factual report does not use it.",
+  "accepted": false,
+  "output": {
+    "key_observations": [
+      "O2",
+      "O1",
+      "O3"
+    ],
+    "relevant_limitations": [
+      "S1",
+      "S2",
+      "S4",
+      "S3"
+    ],
+    "next_checks": [
+      {
+        "check_id": "C2",
+        "rationale": "Validating the handling of tool calls is crucial since the echo provider does not invoke a model call, and this check helps verify that the tool interactions remain consistent.",
+        "evidence": [
+          "S2",
+          "O3"
+        ]
+      },
+      {
+        "check_id": "C1",
+        "rationale": "Ensuring the public exports and API signatures continue to work correctly covers the primary upgrade surface, as these are the main program interfaces affected by the upgrade.",
+        "evidence": [
+          "S1",
+          "S3",
+          "O1"
+        ]
+      },
+      {
+        "check_id": "C3",
+        "rationale": "Reviewing changes to entry point signatures is recommended because added or removed parameters could impact API compatibility and are not automatically flagged as regressions.",
+        "evidence": [
+          "S3",
+          "O2"
+        ]
+      }
+    ]
+  }
+}

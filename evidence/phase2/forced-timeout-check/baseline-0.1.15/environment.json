@@ -1,0 +1,63 @@
+{
+  "env_dir": "~\\AppData\\Local\\mus\\envs\\0.1.15",
+  "path_check": {
+    "ok": true,
+    "limit_applies": true,
+    "estimated_deepest_path_chars": 194,
+    "limit_chars": 239
+  },
+  "venv": {
+    "status": "reused"
+  },
+  "install": {
+    "command": [
+      "~\\AppData\\Local\\mus\\envs\\0.1.15\\Scripts\\python.exe",
+      "-m",
+      "pip",
+      "install",
+      "--disable-pip-version-check",
+      "--no-input",
+      "--progress-bar",
+      "off",
+      "openminion==0.1.15"
+    ],
+    "timeout_seconds": 900,
+    "log": "install.log",
+    "status": "ok",
+    "returncode": 0,
+    "seconds": 1.119,
+    "log_tail": [
+      "Requirement already satisfied: rich>=13.0 in ~\\appdata\\local\\mus\\envs\\0.1.15\\lib\\site-packages (from openminion==0.1.15) (15.0.0)",
+      "Requirement already satisfied: send2trash<3,>=1.8.3 in ~\\appdata\\local\\mus\\envs\\0.1.15\\lib\\site-packages (from openminion==0.1.15) (2.1.0)",
+      "Requirement already satisfied: typer>=0.12 in ~\\appdata\\local\\mus\\envs\\0.1.15\\lib\\site-packages (from openminion==0.1.15) (0.27.3)",
+      "Requirement already satisfied: tzdata in ~\\appdata\\local\\mus\\envs\\0.1.15\\lib\\site-packages (from openminion==0.1.15) (2026.6)",
+      "Requirement already satisfied: SQLAlchemy>=1.4.23 in ~\\appdata\\local\\mus\\envs\\0.1.15\\lib\\site-packages (from alembic==1.18.4->openminion==0.1.15) (2.1.6)",
+      "Requirement already satisfied: Mako in ~\\appdata\\local\\mus\\envs\\0.1.15\\lib\\site-packages (from alembic==1.18.4->openminion==0.1.15) (1.4.3)",
+      "Requirement already satisfied: typing-extensions>=4.12 in ~\\appdata\\local\\mus\\envs\\0.1.15\\lib\\site-packages (from alembic==1.18.4->openminion==0.1.15) (4.16.0)",
+      "Requirement already satisfied: anyio in ~\\appdata\\local\\mus\\envs\\0.1.15\\lib\\site-packages (from httpx<1,>=0.27->openminion==0.1.15) (4.15.1)",
+      "Requirement already satisfied: certifi in ~\\appdata\\local\\mus\\envs\\0.1.15\\lib\\site-packages (from httpx<1,>=0.27->openminion==0.1.15) (2026.10.23)",
+      "Requirement already satisfied: httpcore==1.* in ~\\appdata\\local\\mus\\envs\\0.1.15\\lib\\site-packages (from httpx<1,>=0.27->openminion==0.1.15) (1.0.9)",
+      "Requirement already satisfied: idna in ~\\appdata\\local\\mus\\envs\\0.1.15\\lib\\site-packages (from httpx<1,>=0.27->openminion==0.1.15) (3.20)",
+      "Requirement already satisfied: h11>=0.16 in ~\\appdata\\local\\mus\\envs\\0.1.15\\lib\\site-packages (from httpcore==1.*->httpx<1,>=0.27->openminion==0.1.15) (0.16.0)",
+      "Requirement already satisfied: attrs>=22.2.0 in ~\\appdata\\local\\mus\\envs\\0.1.15\\lib\\site-packages (from jsonschema<5,>=4.23->openminion==0.1.15) (26.1.0)",
+      "Requirement already satisfied: jsonschema-specifications>=2023.03.6 in ~\\appdata\\local\\mus\\envs\\0.1.15\\lib\\site-packages (from jsonschema<5,>=4.23->openminion==0.1.15) (2025.9.1)",
+      "Requirement already satisfied: referencing>=0.28.4 in ~\\appdata\\local\\mus\\envs\\0.1.15\\lib\\site-packages (from jsonschema<5,>=4.23->openminion==0.1.15) (0.37.0)",
+      "Requirement already satisfied: rpds-py>=0.25.0 in ~\\appdata\\local\\mus\\envs\\0.1.15\\lib\\site-packages (from jsonschema<5,>=4.23->openminion==0.1.15) (2026.9.1)",
+      "Requirement already satisfied: wcwidth>=0.1.4 in ~\\appdata\\local\\mus\\envs\\0.1.15\\lib\\site-packages (from prompt-toolkit<4,>=3->openminion==0.1.15) (0.9.4)",
+      "Requirement already satisfied: cffi>=2.0.0 in ~\\appdata\\local\\mus\\envs\\0.1.15\\lib\\site-packages (from cryptography>=41.0.0->openminion==0.1.15) (2.1.1)",
+      "Requirement already satisfied: pycparser in ~\\appdata\\local\\mus\\envs\\0.1.15\\lib\\site-packages (from cffi>=2.0.0->cryptography>=41.0.0->openminion==0.1.15) (3.12)",
+      "Requirement already satisfied: annotated-types>=0.6.0 in ~\\appdata\\local\\mus\\envs\\0.1.15\\lib\\site-packages (from pydantic>=2->openminion==0.1.15) (0.8.0)",
+      "Requirement already satisfied: pydantic-core==2.50.1 in ~\\appdata\\local\\mus\\envs\\0.1.15\\lib\\site-packages (from pydantic>=2->openminion==0.1.15) (2.50.1)",
+      "Requirement already satisfied: typing-inspection>=0.4.4 in ~\\appdata\\local\\mus\\envs\\0.1.15\\lib\\site-packages (from pydantic>=2->openminion==0.1.15) (0.4.4)",
+      "Requirement already satisfied: markdown-it-py>=2.2.0 in ~\\appdata\\local\\mus\\envs\\0.1.15\\lib\\site-packages (from rich>=13.0->openminion==0.1.15) (4.2.0)",
+      "Requirement already satisfied: pygments<3.0.0,>=2.13.0 in ~\\appdata\\local\\mus\\envs\\0.1.15\\lib\\site-packages (from rich>=13.0->openminion==0.1.15) (2.21.0)",
+      "Requirement already satisfied: mdurl~=0.1 in ~\\appdata\\local\\mus\\envs\\0.1.15\\lib\\site-packages (from markdown-it-py>=2.2.0->rich>=13.0->openminion==0.1.15) (0.1.2)",
+      "Requirement already satisfied: graphfakos<1,>=0.0.8 in ~\\appdata\\local\\mus\\envs\\0.1.15\\lib\\site-packages (from sophiagraph>=0.0.12->openminion==0.1.15) (0.0.14)",
+      "Requirement already satisfied: shellingham>=1.3.0 in ~\\appdata\\local\\mus\\envs\\0.1.15\\lib\\site-packages (from typer>=0.12->openminion==0.1.15) (1.5.4)",
+      "Requirement already satisfied: annotated-doc>=0.0.2 in ~\\appdata\\local\\mus\\envs\\0.1.15\\lib\\site-packages (from typer>=0.12->openminion==0.1.15) (0.0.5)",
+      "Requirement already satisfied: colorama in ~\\appdata\\local\\mus\\envs\\0.1.15\\lib\\site-packages (from typer>=0.12->openminion==0.1.15) (0.4.6)",
+      "Requirement already satisfied: MarkupSafe>=2.0 in ~\\appdata\\local\\mus\\envs\\0.1.15\\lib\\site-packages (from Mako->alembic==1.18.4->openminion==0.1.15) (3.0.4)"
+    ]
+  },
+  "status": "ok"
+}

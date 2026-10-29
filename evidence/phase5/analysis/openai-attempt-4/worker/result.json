@@ -1,0 +1,68 @@
+{
+  "sdk_version": "0.1.15",
+  "started_at": "2026-10-29T18:12:58.832+00:00",
+  "status": "completed",
+  "run_state": "completed",
+  "text": "scout: {\"key_observations\":[\"O2\",\"O1\",\"O3\"],\"relevant_limitations\":[\"S1\",\"S2\",\"S4\",\"S3\"],\"next_checks\":[{\"check_id\":\"C2\",\"rationale\":\"Validating the handling of tool calls is crucial since the echo provider does not invoke a model call, and this check helps verify that the tool interactions remain consistent.\",\"evidence\":[\"S2\",\"O3\"]},{\"check_id\":\"C1\",\"rationale\":\"Ensuring the public exports and API signatures continue to work correctly covers the primary upgrade surface, as these are the main program interfaces affected by the upgrade.\",\"evidence\":[\"S1\",\"S3\",\"O1\"]},{\"check_id\":\"C3\",\"rationale\":\"Reviewing changes to entry point signatures is recommended because added or removed parameters could impact API compatibility and are not automatically flagged as regressions.\",\"evidence\":[\"S3\",\"O2\"]}]}",
+  "output": {
+    "key_observations": [
+      "O2",
+      "O1",
+      "O3"
+    ],
+    "relevant_limitations": [
+      "S1",
+      "S2",
+      "S4",
+      "S3"
+    ],
+    "next_checks": [
+      {
+        "check_id": "C2",
+        "rationale": "Validating the handling of tool calls is crucial since the echo provider does not invoke a model call, and this check helps verify that the tool interactions remain consistent.",
+        "evidence": [
+          "S2",
+          "O3"
+        ]
+      },
+      {
+        "check_id": "C1",
+        "rationale": "Ensuring the public exports and API signatures continue to work correctly covers the primary upgrade surface, as these are the main program interfaces affected by the upgrade.",
+        "evidence": [
+          "S1",
+          "S3",
+          "O1"
+        ]
+      },
+      {
+        "check_id": "C3",
+        "rationale": "Reviewing changes to entry point signatures is recommended because added or removed parameters could impact API compatibility and are not automatically flagged as regressions.",
+        "evidence": [
+          "S3",
+          "O2"
+        ]
+      }
+    ]
+  },
+  "runtime": {
+    "id": "2cd3a3a6a58641e9825bb4e82891c770",
+    "run_id": "717d4004ae8c4328bb8bb5b3f6d17999",
+    "session_id": "upgrade-scout-analysis",
+    "run_state": "completed",
+    "metadata_provider": "openai",
+    "metadata_model": "brain-orchestrator",
+    "request_id": "5d887ab80ce24e81b6eee8c76556ba4f",
+    "execution_id": "70d278fcc4ba44a6ba80cae7f1c911e4",
+    "invocation_id": "8224c0e8430b478e87e20de02e1de83f",
+    "stats": {
+      "input_tokens": 8578,
+      "output_tokens": 355,
+      "cache_read_tokens": 0,
+      "llm_calls": 1,
+      "tool_calls": 1,
+      "tool_errors": 0,
+      "duration_ms": 14223
+    }
+  },
+  "finished_at": "2026-10-29T18:13:15.174+00:00"
+}

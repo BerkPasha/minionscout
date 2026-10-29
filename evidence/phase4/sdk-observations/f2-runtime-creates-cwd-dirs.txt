@@ -1,0 +1,12 @@
+# F2: APIRuntime start creates directories under the process cwd
+# openminion 0.1.15, MINGW64_NT-10.0-26200, OPENMINION_HOME and OPENMINION_DATA_ROOT set to a separate directory
+# command: cd <empty dir> && python -c 'from openminion import APIRuntime; APIRuntime.from_config_path(None).close()'
+exit=0
+# cwd contents afterwards:
+./.openminion
+./.openminion/browser-playwright
+./.openminion/browser-playwright/artifacts
+./.openminion/browser-playwright/artifacts/pdf
+./.openminion/browser-playwright/artifacts/screenshots
+./.openminion/browser-playwright/artifacts/traces
+./.openminion/browser-playwright/downloads

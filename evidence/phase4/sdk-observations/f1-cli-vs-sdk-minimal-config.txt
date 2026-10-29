@@ -1,0 +1,6 @@
+# F1: same documented minimal config, CLI vs SDK (openminion 0.1.15, Windows 11, fresh short-path home)
+# config: {"default_agent": "default", "agents": {"default": {"name": "default", "provider": "echo"}}}
+# 1) openminion run "hello cli"  -> exit=0
+default: hello cli (thinking=minimal)
+# 2) python: with Agent() as a: a.run('hello sdk')  -> exit=0
+Agent.run raised RuntimeError: inbound authenticity denied (reason=invalid_channel, mode=warn)

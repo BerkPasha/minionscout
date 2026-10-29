@@ -1,0 +1,52 @@
+{
+  "complete": true,
+  "config": {
+    "agents": {
+      "default": {
+        "name": "default",
+        "provider": "echo"
+      }
+    },
+    "default_agent": "default"
+  },
+  "current_step": null,
+  "error": {
+    "message": "inbound authenticity denied (reason=invalid_channel, mode=warn)",
+    "type": "RuntimeError"
+  },
+  "finished_at": "2026-10-29T14:25:15+00:00",
+  "invalid_channel_rejection": true,
+  "outcome": "raised",
+  "probe_schema": 1,
+  "requested_version": "0.1.8",
+  "stage": "minimal_config",
+  "started_at": "2026-10-29T14:25:11+00:00",
+  "traceback_tail": [
+    "               ^^^^^^^^^^^^^^^^^^^^^^^^^^",
+    "    ...<13 lines>...",
+    "    )",
+    "    ^",
+    "  File \"~\\AppData\\Local\\mus\\envs\\0.1.8\\Lib\\site-packages\\openminion\\services\\gateway\\turn\\flow_agent.py\", line 323, in _execute_agent",
+    "    authenticity_decision = self._enforce_inbound_security(",
+    "        channel=channel,",
+    "    ...<4 lines>...",
+    "        session_turn_fence_token=session_turn_fence_token,",
+    "    )",
+    "  File \"~\\AppData\\Local\\mus\\envs\\0.1.8\\Lib\\site-packages\\openminion\\services\\gateway\\turn\\flow_agent.py\", line 93, in _enforce_inbound_security",
+    "    self._security.enforce_inbound_authenticity(",
+    "    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^",
+    "        session_id=session_id,",
+    "        ^^^^^^^^^^^^^^^^^^^^^^",
+    "    ...<2 lines>...",
+    "        session_turn_fence_token=session_turn_fence_token,",
+    "        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+    "    )",
+    "    ^",
+    "  File \"~\\AppData\\Local\\mus\\envs\\0.1.8\\Lib\\site-packages\\openminion\\services\\gateway\\security.py\", line 132, in enforce_inbound_authenticity",
+    "    raise RuntimeError(",
+    "    ...<2 lines>...",
+    "    )",
+    "RuntimeError: inbound authenticity denied (reason=invalid_channel, mode=warn)"
+  ],
+  "turn_seconds": 1.21
+}

@@ -1,0 +1,61 @@
+# Tool-result transport verification (F9), OFFLINE, MOCKED PROVIDER
+MOCKED PROVIDER: captured offline at a local fake OpenAI-compatible endpoint. The real SDK, worker, decorated tool and approval callback ran; the model did not. Not live evidence.
+Inputs: evidence/phase3/compare/0.1.8-vs-0.1.15/report.json (17 facts, 3 next-check options), checked equal to openai-attempt-4's request.
+
+## fixed
+tool returned (audit log): [{'verdict': 1, 'scope_rules': 5, 'observations': 11, 'next_check_options': 3}]
+provider requests captured: 8; post-tool requests: 2
+identical tool message in every post-tool request: True
+tool message: 4163 characters; truncation markers: none
+tool message outputs identical to the payload the tool returned: True
+expected vs received (id, kind, arrived with full text): 20 of 20 intact
+  V1                              verdict            intact
+  S1                              scope_rule         intact
+  S2                              scope_rule         intact
+  S3                              scope_rule         intact
+  S4                              scope_rule         intact
+  S5                              scope_rule         intact
+  P1                              observation        intact
+  P2                              observation        intact
+  R0                              observation        intact
+  X1                              observation        intact
+  X2                              observation        intact
+  G1                              observation        intact
+  C0                              observation        intact
+  N0                              observation        intact
+  B1                              observation        intact
+  B2                              observation        intact
+  B3                              observation        intact
+  set_default_channel             next_check_option  intact
+  validate_with_real_provider     next_check_option  intact
+  test_uncovered_building_blocks  next_check_option  intact
+worker status: completed; model output: {"key_observations": ["B1", "B2", "B3"], "relevant_limitations": ["S1", "S2"], "next_checks": [{"check_id": "set_default_channel", "rationale": "MOCKED rationale", "evidence": []}, {"check_id": "validate_with_real_provider", "rationale": "MOCKED rationale", "evidence": []}, {"check_id": "test_uncovered_building_blocks", "rationale": "MOCKED rationale", "evidence": []}]}
+
+## negative-control
+tool returned (audit log): [{'type': 'str', 'chars': 4294}]
+provider requests captured: 8; post-tool requests: 2
+identical tool message in every post-tool request: True
+tool message: 1362 characters; truncation markers: ['[truncated]']
+tool message outputs identical to the payload the tool returned: False
+expected vs received (id, kind, arrived with full text): 5 of 20 intact
+  V1                              verdict            intact
+  S1                              scope_rule         intact
+  S2                              scope_rule         intact
+  S3                              scope_rule         intact
+  S4                              scope_rule         intact
+  S5                              scope_rule         MISSING
+  P1                              observation        MISSING
+  P2                              observation        MISSING
+  R0                              observation        MISSING
+  X1                              observation        MISSING
+  X2                              observation        MISSING
+  G1                              observation        MISSING
+  C0                              observation        MISSING
+  N0                              observation        MISSING
+  B1                              observation        MISSING
+  B2                              observation        MISSING
+  B3                              observation        MISSING
+  set_default_channel             next_check_option  MISSING
+  validate_with_real_provider     next_check_option  MISSING
+  test_uncovered_building_blocks  next_check_option  MISSING
+worker status: output_invalid; model output: "scout: MOCKED: evidence incomplete; missing S5, P1, P2, R0, X1, X2, G1, C0, N0, B1, B2, B3, set_default_channel, validate_with_real_provider, test_uncovered_building_blocks"

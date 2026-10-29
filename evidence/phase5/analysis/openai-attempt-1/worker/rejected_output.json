@@ -1,0 +1,4 @@
+{
+  "note": "Model output that was NOT accepted as a brief; kept for inspection only.",
+  "output": "scout: Policy confirmation required.\ncomparison_evidence\nRisk: write\nSide effects: local\nReversibility: unknown\nReason: UNKNOWN_REVERSIBILITY\nChoices: allow_once, allow_session, deny\nReply exactly yes or allow_once to allow once, session or allow_session to allow this tool for the session, or no or deny to cancel."
+}

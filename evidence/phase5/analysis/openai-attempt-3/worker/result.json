@@ -1,0 +1,96 @@
+{
+  "sdk_version": "0.1.15",
+  "started_at": "2026-10-29T15:48:38.150+00:00",
+  "status": "completed",
+  "run_state": "completed",
+  "text": "scout: {\n\"verdict\": \"compatible (exit code 0); comparison complete: True.\",\n\"summary\": \"The upgrade from OpenMinion SDK version 0.1.8 to 0.1.15 is deemed compatible based on the probes conducted. The comparison covered public exports, APIs, multiple entry points, and an echo-provider Agent.run test without real model calls. There are added exports and signature differences that do not break backward compatibility. The results are constrained by echo-provider limitations.\",\n\"observed\": [\n{\n\"statement\": \"The upgrade proves compatibility with exit code 0 and complete comparison coverage between versions 0.1.8 and 0.1.15.\",\n\"evidence\": [\"V1\"]\n},\n{\n\"statement\": \"The comparison measures public exports of openminion and openminion.api, signatures of 6 entry points, and one echo-provider Agent.run using default_channel.\",\n\"evidence\": [\"S1\"]\n},\n{\n\"statement\": \"The echo provider runs without making real model calls, capturing forced tool use and tool_calls record per version.\",\n\"evidence\": [\"S2\"]\n},\n{\n\"statement\": \"Added exports and signature differences are reported, but no removals or newly required parameters were found constituting API regressions.\",\n\"evidence\": [\"S3\"]\n}\n],\n\"untested\": [\n{\n\"statement\": \"The echo-provider probes prove neither real model inference nor model-driven tool execution.\",\n\"evidence\": [\"S2\"]\n},\n{\n\"statement\": \"Coverage gaps exist when export roots or entry points were not measurable in either version, leaving certain areas unvalidated.\",\n\"evidence\": [\"S4\"]\n}\n],\n\"rough_edges\": [],\n\"next_checks\": [\n{\n\"action\": \"Test the upgrade with real model inference calls and real model-driven tool executions.\",\n\"reason\": \"Current probes used an echo provider without real model calls, so the upgrade's compatibility in real inference scenarios is still unknown.\",\n\"evidence\": [\"S2\"]\n},\n{\n\"action\": \"Review signature changes reported as not regressions to ensure there are no functional incompatibilities.\",\n\"reason\": \"Some signature changes other than removals or newly required parameters need careful review despite not being flagged as regressions.\",\n\"evidence\": [\"S3\"]\n},\n{\n\"action\": \"Fill coverage gaps by measuring any export roots or entry points that were not tested in one or both versions.\",\n\"reason\": \"Unmeasured exports and entry points represent blind spots in the compatibility verification.\",\n\"evidence\": [\"S4\"]\n}\n]\n}",
+  "output": {
+    "verdict": "compatible (exit code 0); comparison complete: True.",
+    "summary": "The upgrade from OpenMinion SDK version 0.1.8 to 0.1.15 is deemed compatible based on the probes conducted. The comparison covered public exports, APIs, multiple entry points, and an echo-provider Agent.run test without real model calls. There are added exports and signature differences that do not break backward compatibility. The results are constrained by echo-provider limitations.",
+    "observed": [
+      {
+        "statement": "The upgrade proves compatibility with exit code 0 and complete comparison coverage between versions 0.1.8 and 0.1.15.",
+        "evidence": [
+          "V1"
+        ]
+      },
+      {
+        "statement": "The comparison measures public exports of openminion and openminion.api, signatures of 6 entry points, and one echo-provider Agent.run using default_channel.",
+        "evidence": [
+          "S1"
+        ]
+      },
+      {
+        "statement": "The echo provider runs without making real model calls, capturing forced tool use and tool_calls record per version.",
+        "evidence": [
+          "S2"
+        ]
+      },
+      {
+        "statement": "Added exports and signature differences are reported, but no removals or newly required parameters were found constituting API regressions.",
+        "evidence": [
+          "S3"
+        ]
+      }
+    ],
+    "untested": [
+      {
+        "statement": "The echo-provider probes prove neither real model inference nor model-driven tool execution.",
+        "evidence": [
+          "S2"
+        ]
+      },
+      {
+        "statement": "Coverage gaps exist when export roots or entry points were not measurable in either version, leaving certain areas unvalidated.",
+        "evidence": [
+          "S4"
+        ]
+      }
+    ],
+    "rough_edges": [],
+    "next_checks": [
+      {
+        "action": "Test the upgrade with real model inference calls and real model-driven tool executions.",
+        "reason": "Current probes used an echo provider without real model calls, so the upgrade's compatibility in real inference scenarios is still unknown.",
+        "evidence": [
+          "S2"
+        ]
+      },
+      {
+        "action": "Review signature changes reported as not regressions to ensure there are no functional incompatibilities.",
+        "reason": "Some signature changes other than removals or newly required parameters need careful review despite not being flagged as regressions.",
+        "evidence": [
+          "S3"
+        ]
+      },
+      {
+        "action": "Fill coverage gaps by measuring any export roots or entry points that were not tested in one or both versions.",
+        "reason": "Unmeasured exports and entry points represent blind spots in the compatibility verification.",
+        "evidence": [
+          "S4"
+        ]
+      }
+    ]
+  },
+  "runtime": {
+    "id": "035eade1d95a4fa0bf64c555be07434e",
+    "run_id": "d0a21ff10d824f47af7099adc30e7362",
+    "session_id": "upgrade-scout-analysis",
+    "run_state": "completed",
+    "metadata_provider": "openai",
+    "metadata_model": "brain-orchestrator",
+    "request_id": "b84626b35bf441df9dd224764c1a66ba",
+    "execution_id": "74553f11e311414889d03968d84c2574",
+    "invocation_id": "fa24407cae5f4d408fe5093ef514177a",
+    "stats": {
+      "input_tokens": 6223,
+      "output_tokens": 662,
+      "cache_read_tokens": 0,
+      "llm_calls": 1,
+      "tool_calls": 1,
+      "tool_errors": 0,
+      "duration_ms": 10447
+    }
+  },
+  "finished_at": "2026-10-29T15:48:50.121+00:00"
+}

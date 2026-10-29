@@ -1,0 +1,120 @@
+{
+  "provider": "openai",
+  "model": "gpt-4.1-mini",
+  "home": "~\\AppData\\Local\\mus\\work\\analysis-071b0794\\home",
+  "tool_log": "~\\OneDrive\\Masa\u00fcst\u00fc\\cortensor-upgrade-scout\\evidence\\phase5\\analysis\\openai-attempt-4\\worker\\tool_calls.jsonl",
+  "result_path": "~\\OneDrive\\Masa\u00fcst\u00fc\\cortensor-upgrade-scout\\evidence\\phase5\\analysis\\openai-attempt-4\\worker\\result.json",
+  "approval_log": "~\\OneDrive\\Masa\u00fcst\u00fc\\cortensor-upgrade-scout\\evidence\\phase5\\analysis\\openai-attempt-4\\worker\\approvals.jsonl",
+  "session_id": "upgrade-scout-analysis",
+  "turn_timeout": 480.0,
+  "instructions": "You are Minion Upgrade Scout. The application has already written the factual upgrade report from a deterministic comparison. Your job is to prioritize it.\n1. First call the comparison_evidence tool. It takes no arguments. It returns facts (each with an id and a category: verdict, observation or scope_rule) and next_check_options.\n2. Then reply with one JSON object and nothing else, matching this JSON schema:\n{\"$defs\":{\"RankedCheck\":{\"additionalProperties\":false,\"properties\":{\"check_id\":{\"description\":\"an id from next_check_options\",\"title\":\"Check Id\",\"type\":\"string\"},\"rationale\":{\"description\":\"why this check matters for this upgrade; a recommendation, not a fact\",\"maxLength\":400,\"minLength\":1,\"title\":\"Rationale\",\"type\":\"string\"},\"evidence\":{\"description\":\"ids of observation or scope_rule facts the rationale relies on\",\"items\":{\"type\":\"string\"},\"maxItems\":6,\"title\":\"Evidence\",\"type\":\"array\"}},\"required\":[\"check_id\",\"rationale\"],\"title\":\"RankedCheck\",\"type\":\"object\"}},\"additionalProperties\":false,\"description\":\"The only reply shape accepted from the model: ids and rankings, no measured results.\",\"properties\":{\"key_observations\":{\"description\":\"ids of observation facts, most important first\",\"items\":{\"type\":\"string\"},\"maxItems\":6,\"minItems\":1,\"title\":\"Key Observations\",\"type\":\"array\"},\"relevant_limitations\":{\"description\":\"ids of scope_rule facts that most limit this comparison\",\"items\":{\"type\":\"string\"},\"maxItems\":5,\"minItems\":1,\"title\":\"Relevant Limitations\",\"type\":\"array\"},\"next_checks\":{\"description\":\"checks from next_check_options, most important first\",\"items\":{\"$ref\":\"#/$defs/RankedCheck\"},\"maxItems\":5,\"minItems\":1,\"title\":\"Next Checks\",\"type\":\"array\"}},\"required\":[\"key_observations\",\"relevant_limitations\",\"next_checks\"],\"title\":\"ModelSelection\",\"type\":\"object\"}\nRules:\n- key_observations: ids of facts whose category is observation, most important for someone upgrading first.\n- relevant_limitations: ids of facts whose category is scope_rule that most limit what this comparison shows. A scope rule is not a measured result.\n- next_checks: choose check_id values from next_check_options only, most important first. Give each a one- or two-sentence rationale and the observation or scope_rule ids it relies on.\n- Use only ids returned by the tool. Do not include a verdict, a summary, or any other field: the application renders the verdict and all measured results itself.\n- A rationale is a recommendation. Do not state results that the cited facts do not contain, and do not state or imply that the upgrade is safe for arbitrary agents, real model providers, or production use.",
+  "message": "Prioritize the upgrade evidence for openminion 0.1.8 -> 0.1.15.\n\nYou are Minion Upgrade Scout. The application has already written the factual upgrade report from a deterministic comparison. Your job is to prioritize it.\n1. First call the comparison_evidence tool. It takes no arguments. It returns facts (each with an id and a category: verdict, observation or scope_rule) and next_check_options.\n2. Then reply with one JSON object and nothing else, matching this JSON schema:\n{\"$defs\":{\"RankedCheck\":{\"additionalProperties\":false,\"properties\":{\"check_id\":{\"description\":\"an id from next_check_options\",\"title\":\"Check Id\",\"type\":\"string\"},\"rationale\":{\"description\":\"why this check matters for this upgrade; a recommendation, not a fact\",\"maxLength\":400,\"minLength\":1,\"title\":\"Rationale\",\"type\":\"string\"},\"evidence\":{\"description\":\"ids of observation or scope_rule facts the rationale relies on\",\"items\":{\"type\":\"string\"},\"maxItems\":6,\"title\":\"Evidence\",\"type\":\"array\"}},\"required\":[\"check_id\",\"rationale\"],\"title\":\"RankedCheck\",\"type\":\"object\"}},\"additionalProperties\":false,\"description\":\"The only reply shape accepted from the model: ids and rankings, no measured results.\",\"properties\":{\"key_observations\":{\"description\":\"ids of observation facts, most important first\",\"items\":{\"type\":\"string\"},\"maxItems\":6,\"minItems\":1,\"title\":\"Key Observations\",\"type\":\"array\"},\"relevant_limitations\":{\"description\":\"ids of scope_rule facts that most limit this comparison\",\"items\":{\"type\":\"string\"},\"maxItems\":5,\"minItems\":1,\"title\":\"Relevant Limitations\",\"type\":\"array\"},\"next_checks\":{\"description\":\"checks from next_check_options, most important first\",\"items\":{\"$ref\":\"#/$defs/RankedCheck\"},\"maxItems\":5,\"minItems\":1,\"title\":\"Next Checks\",\"type\":\"array\"}},\"required\":[\"key_observations\",\"relevant_limitations\",\"next_checks\"],\"title\":\"ModelSelection\",\"type\":\"object\"}\nRules:\n- key_observations: ids of facts whose category is observation, most important for someone upgrading first.\n- relevant_limitations: ids of facts whose category is scope_rule that most limit what this comparison shows. A scope rule is not a measured result.\n- next_checks: choose check_id values from next_check_options only, most important first. Give each a one- or two-sentence rationale and the observation or scope_rule ids it relies on.\n- Use only ids returned by the tool. Do not include a verdict, a summary, or any other field: the application renders the verdict and all measured results itself.\n- A rationale is a recommendation. Do not state results that the cited facts do not contain, and do not state or imply that the upgrade is safe for arbitrary agents, real model providers, or production use.",
+  "facts_payload": {
+    "report_sha256": "8b82e734b19d99b00f4e2d0eca44807f0ffeb6efa3660fa1743afc68a8e0fc93",
+    "verdict": "compatible",
+    "facts": [
+      {
+        "id": "V1",
+        "category": "verdict",
+        "statement": "Deterministic verdict for openminion 0.1.8 -> 0.1.15: compatible (exit code 0); comparison complete: True."
+      },
+      {
+        "id": "S1",
+        "category": "scope_rule",
+        "statement": "Conclusions cover only the probes listed here: the public exports of openminion and openminion.api, the signatures of 6 entry points, one echo-provider Agent.run with default_channel set, and the documented minimal config without default_channel."
+      },
+      {
+        "id": "S2",
+        "category": "scope_rule",
+        "statement": "The echo provider makes no model call. These results prove neither real model inference nor model-driven tool execution; the forced tool is attached, and tool_calls is recorded per version."
+      },
+      {
+        "id": "S3",
+        "category": "scope_rule",
+        "statement": "Added exports and signature differences are reported as facts. Only removed exports, entry points or parameters, and newly required parameters, count as API regressions; other signature changes need review."
+      },
+      {
+        "id": "S4",
+        "category": "scope_rule",
+        "statement": "An export root or entry point that could not be measured in a version is a coverage gap: the comparison is incomplete for it, and it is not counted as a regression."
+      },
+      {
+        "id": "S5",
+        "category": "scope_rule",
+        "statement": "Providers, network, memory, skills, tasks, delegation and permissions are not exercised."
+      },
+      {
+        "id": "P1",
+        "category": "observation",
+        "statement": "The baseline requested openminion 0.1.8; installed 0.1.8; imported __version__ 0.1.8; Python 3.13.5 on Windows-11-10.0.26200-SP0; environment ok."
+      },
+      {
+        "id": "P2",
+        "category": "observation",
+        "statement": "The candidate requested openminion 0.1.15; installed 0.1.15; imported __version__ 0.1.15; Python 3.13.5 on Windows-11-10.0.26200-SP0; environment ok."
+      },
+      {
+        "id": "R0",
+        "category": "observation",
+        "statement": "No regressions were observed in the executed probes."
+      },
+      {
+        "id": "X1",
+        "category": "observation",
+        "statement": "Exports of openminion: 12 names in 0.1.8, 12 in 0.1.15; added: none; removed: none."
+      },
+      {
+        "id": "X2",
+        "category": "observation",
+        "statement": "Exports of openminion.api: 15 names in 0.1.8, 15 in 0.1.15; added: none; removed: none."
+      },
+      {
+        "id": "G1",
+        "category": "observation",
+        "statement": "Entry-point signatures: 6 of 6 identical in both versions (openminion.Agent, openminion.Agent.run, openminion.Agent.run_stream, openminion.tool, openminion.APIRuntime.from_config_path, openminion.APIRuntime.run_turn); 0 changed."
+      },
+      {
+        "id": "C0",
+        "category": "observation",
+        "statement": "No coverage gaps: every export root and entry point was measured in both versions."
+      },
+      {
+        "id": "N0",
+        "category": "observation",
+        "statement": "No environment failures or incomplete stages."
+      },
+      {
+        "id": "B1",
+        "category": "observation",
+        "statement": "Echo contract (completed, echoed_message, echo_provider, session_preserved): baseline contract_met, candidate contract_met; failed checks {'baseline': [], 'candidate': []}; classification unchanged."
+      },
+      {
+        "id": "B2",
+        "category": "observation",
+        "statement": "Echo telemetry (no model call): baseline llm_calls=1 tool_calls=0 input_tokens=0 output_tokens=0; candidate llm_calls=1 tool_calls=0 input_tokens=0 output_tokens=0."
+      },
+      {
+        "id": "B3",
+        "category": "observation",
+        "statement": "Documented minimal config without default_channel: baseline rejected_invalid_channel, candidate rejected_invalid_channel (unchanged); candidate error: inbound authenticity denied (reason=invalid_channel, mode=warn)."
+      }
+    ],
+    "next_check_options": [
+      {
+        "id": "set_default_channel",
+        "action": "Set default_channel on agents that rely on the documented minimal config.",
+        "applies_because": "the candidate rejects the documented minimal config (invalid_channel)"
+      },
+      {
+        "id": "validate_with_real_provider",
+        "action": "Run your agent's own workflow with a real model provider on the candidate version.",
+        "applies_because": "the echo probes prove neither real inference nor model-driven tool execution"
+      },
+      {
+        "id": "test_uncovered_building_blocks",
+        "action": "Test the building blocks your agent uses that these probes do not exercise (memory, skills, tasks, delegation, permissions).",
+        "applies_because": "the probes cover only exports, signatures, an echo turn and the minimal config"
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "asyncio_loop": {
+    "ok": true
+  },
+  "complete": true,
+  "current_step": null,
+  "finished_at": "2026-10-29T14:25:03+00:00",
+  "installed_version": "0.1.8",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "probe_schema": 1,
+  "python": {
+    "executable": "~\\AppData\\Local\\mus\\envs\\0.1.8\\Scripts\\python.exe",
+    "implementation": "CPython",
+    "version": "3.13.5"
+  },
+  "requested_version": "0.1.8",
+  "socketpair": {
+    "ok": true,
+    "seconds": 0.001
+  },
+  "stage": "preflight",
+  "started_at": "2026-10-29T14:25:03+00:00"
+}

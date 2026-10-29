@@ -1,0 +1,35 @@
+{
+  "source_report": "report.json",
+  "source_schema": "minion-upgrade-scout/compare/2",
+  "source_sha256": "8b82e734b19d99b00f4e2d0eca44807f0ffeb6efa3660fa1743afc68a8e0fc93",
+  "stored": {
+    "verdict": "compatible",
+    "exit_code": 0,
+    "complete": true
+  },
+  "recomputed": {
+    "verdict": "compatible",
+    "exit_code": 0,
+    "complete": true,
+    "regressions": [],
+    "coverage_gaps": [],
+    "environment_failures": [],
+    "incomplete": [],
+    "behavior": [
+      {
+        "probe": "echo_turn",
+        "baseline": "contract_met",
+        "candidate": "contract_met",
+        "classification": "unchanged"
+      },
+      {
+        "probe": "minimal_config",
+        "baseline": "rejected_invalid_channel",
+        "candidate": "rejected_invalid_channel",
+        "classification": "unchanged"
+      }
+    ]
+  },
+  "verdict_changed": false,
+  "matches_stored_comparison": true
+}

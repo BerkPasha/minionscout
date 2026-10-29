@@ -1,0 +1,44 @@
+{
+  "exports": {
+    "openminion": [
+      "APIRuntime",
+      "Agent",
+      "AgentOutputValidationError",
+      "AgentRunResult",
+      "Handoff",
+      "MemoryBundle",
+      "OpenMinionConfig",
+      "ProviderError",
+      "TurnTimeoutError",
+      "__version__",
+      "subagent",
+      "tool"
+    ],
+    "openminion.api": [
+      "APIRuntime",
+      "Agent",
+      "AgentOutputValidationError",
+      "AgentRunResult",
+      "Handoff",
+      "ProviderError",
+      "RuntimeTurnHandle",
+      "ToolCallSummary",
+      "TurnChunk",
+      "TurnError",
+      "TurnResponse",
+      "TurnTelemetry",
+      "TurnTimeoutError",
+      "dispatch_request",
+      "subagent"
+    ]
+  },
+  "sdk_version": "0.1.15",
+  "signatures": {
+    "openminion.APIRuntime.from_config_path": "(config_path: 'str | None', *, home_root: 'str | PathLike[str] | None' = None, data_root: 'str | PathLike[str] | None' = None, run_profile_overrides: 'RunProfileOverrides | None' = None, logging_mode: 'str' = 'default') -> 'Any'",
+    "openminion.APIRuntime.run_turn": "(self, *, payload: dict[str, object], request_id: str | None = None, progress_callback: Optional[Callable[[object], NoneType]] = None, approval_callback: typing.Any | None = None, cancel_event: typing.Any | None = None, trusted_subagent_context: typing.Any | None = None) -> dict[str, object]",
+    "openminion.Agent": "(self, *, instructions: 'str | None' = None, output_type: 'type[OutputT] | None' = None, runtime: 'APIRuntime | None' = None, config_path: 'str | None' = None, agent_id: 'str | None' = None, model: 'str | None' = None, tools: 'list[ToolInput] | None' = None, forced_tools: 'list[str] | None' = None, handoffs: \"list['Handoff'] | None\" = None, name: 'str | None' = None, session_id: 'str | None' = None, subagent_context: \"'SubagentRunContext | None'\" = None, delegated_memory_request: \"'DelegatedMemoryReadRequest | None'\" = None) -> 'None'",
+    "openminion.Agent.run": "(self, message: 'InputT', *, session_id: 'str | None' = None, timeout_seconds: 'float | None' = None, approval_callback: '_ApprovalCallback | None' = None, cancel_event: 'Event | None' = None) -> 'AgentRunResult[OutputT]'",
+    "openminion.Agent.run_stream": "(self, message: 'InputT', *, session_id: 'str | None' = None, on_delta: 'Callable[[object], None] | None' = None, timeout_seconds: 'float | None' = None, approval_callback: '_ApprovalCallback | None' = None, cancel_event: 'Event | None' = None) -> 'AgentRunResult[OutputT]'",
+    "openminion.tool": "(func: collections.abc.Callable[..., typing.Any] | None = None, *, name: Optional[str] = None, description: Optional[str] = None, min_scope: Optional[str] = None, dangerous: bool = False, idempotent: bool = False, tags: tuple[str, ...] = (), capabilities: tuple[str, ...] = ()) -> Any"
+  }
+}

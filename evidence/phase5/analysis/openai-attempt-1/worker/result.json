@@ -1,0 +1,11 @@
+{
+  "sdk_version": "0.1.15",
+  "started_at": "2026-10-29T15:20:44.074+00:00",
+  "status": "output_invalid",
+  "raw_text": "scout: Policy confirmation required.\ncomparison_evidence\nRisk: write\nSide effects: local\nReversibility: unknown\nReason: UNKNOWN_REVERSIBILITY\nChoices: allow_once, allow_session, deny\nReply exactly yes or allow_once to allow once, session or allow_session to allow this tool for the session, or no or deny to cancel.",
+  "error": {
+    "type": "AgentOutputValidationError",
+    "message": "Reply did not validate against UpgradeBrief: 1 validation error for UpgradeBrief\n  Invalid JSON: expected value at line 1 column 1 [type=json_invalid, input_value='scout: Policy confirmati...r no or deny to cancel.', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/json_invalid"
+  },
+  "finished_at": "2026-10-29T15:20:51.615+00:00"
+}

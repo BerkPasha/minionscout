@@ -1,0 +1,10 @@
+{
+  "note": "MOCKED PROVIDER: captured offline at a local fake OpenAI-compatible endpoint. The real SDK, worker, decorated tool and approval callback ran; the model did not. Not live evidence.",
+  "tool_message_content_decoded": {
+    "status": "success",
+    "summary": "Tool executed successfully",
+    "outputs": {
+      "data": "{\"facts\": [{\"category\": \"verdict\", \"id\": \"V1\", \"statement\": \"Deterministic verdict for openminion 0.1.8 -> 0.1.15: compatible (exit code 0); comparison complete: True.\"}, {\"category\": \"scope_rule\", \"id\": \"S1\", \"statement\": \"Conclusions cover only the probes listed here: the public exports of openminion and openminion.api, the signatures of 6 entry points, one echo-provider Agent.run with default_channel set, and the documented minimal config without default_channel.\"}, {\"category\": \"scope_rule\", \"id\": \"S2\", \"statement\": \"The echo provider makes no model call. These results prove neither real model inference nor model-driven tool execution; the forced tool is attached, and tool_calls is recorded per version.\"}, {\"category\": \"scope_rule\", \"id\": \"S3\", \"statement\": \"Added exports and signature differences are reported as facts. Only removed exports, entry points or parameters, and newly required parameters, count as API regressions; other signature changes need review.\"}, {\"category\": \"scope_rule\", \"id\": \"S4\", \"statement\": \"An export root or entry point that could not be measured in a version is a coverage gap: the comparison is incomplete for it, and it is not counted as a regression....[truncated]"
+    }
+  }
+}

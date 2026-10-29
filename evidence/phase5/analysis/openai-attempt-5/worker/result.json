@@ -1,0 +1,71 @@
+{
+  "sdk_version": "0.1.15",
+  "started_at": "2026-10-29T18:44:41.149+00:00",
+  "status": "completed",
+  "run_state": "completed",
+  "text": "scout: {\n\"key_observations\": [\n\"R0\",\n\"B1\",\n\"G1\",\n\"C0\",\n\"X1\",\n\"X2\"\n],\n\"relevant_limitations\": [\n\"S1\",\n\"S2\",\n\"S3\",\n\"S4\",\n\"S5\"\n],\n\"next_checks\": [\n{\n\"check_id\": \"validate_with_real_provider\",\n\"rationale\": \"This check is important because the echo probes do not demonstrate real model inference or model-driven tool execution, which are critical for validating upgrade behavior in production-like scenarios.\",\n\"evidence\": [\n\"S2\",\n\"B1\",\n\"B2\"\n]\n},\n{\n\"check_id\": \"test_uncovered_building_blocks\",\n\"rationale\": \"Testing building blocks like memory, skills, tasks, delegation, and permissions is necessary because these aspects are not exercised by the existing probes, leaving gaps in coverage for the upgrade evaluation.\",\n\"evidence\": [\n\"S5\"\n]\n},\n{\n\"check_id\": \"set_default_channel\",\n\"rationale\": \"Setting default_channel on agents relying on the minimal config matters since the candidate version rejects the documented minimal config due to invalid_channel errors, potentially impacting upgrade smoothness.\",\n\"evidence\": [\n\"B3\",\n\"S1\"\n]\n}\n]\n}",
+  "output": {
+    "key_observations": [
+      "R0",
+      "B1",
+      "G1",
+      "C0",
+      "X1",
+      "X2"
+    ],
+    "relevant_limitations": [
+      "S1",
+      "S2",
+      "S3",
+      "S4",
+      "S5"
+    ],
+    "next_checks": [
+      {
+        "check_id": "validate_with_real_provider",
+        "rationale": "This check is important because the echo probes do not demonstrate real model inference or model-driven tool execution, which are critical for validating upgrade behavior in production-like scenarios.",
+        "evidence": [
+          "S2",
+          "B1",
+          "B2"
+        ]
+      },
+      {
+        "check_id": "test_uncovered_building_blocks",
+        "rationale": "Testing building blocks like memory, skills, tasks, delegation, and permissions is necessary because these aspects are not exercised by the existing probes, leaving gaps in coverage for the upgrade evaluation.",
+        "evidence": [
+          "S5"
+        ]
+      },
+      {
+        "check_id": "set_default_channel",
+        "rationale": "Setting default_channel on agents relying on the minimal config matters since the candidate version rejects the documented minimal config due to invalid_channel errors, potentially impacting upgrade smoothness.",
+        "evidence": [
+          "B3",
+          "S1"
+        ]
+      }
+    ]
+  },
+  "runtime": {
+    "id": "10b192455da64b2a8f83ff18ecf3622c",
+    "run_id": "23ab8f8132a6407282c6da543f164d86",
+    "session_id": "upgrade-scout-analysis",
+    "run_state": "completed",
+    "metadata_provider": "openai",
+    "metadata_model": "brain-orchestrator",
+    "request_id": "cc41aca9d12f477cb411772697da191f",
+    "execution_id": "706a083746a84997a2372b44e8dc2344",
+    "invocation_id": "8385c0eb008e4c96b123a5053e68b1b8",
+    "stats": {
+      "input_tokens": 10107,
+      "output_tokens": 560,
+      "cache_read_tokens": 0,
+      "llm_calls": 1,
+      "tool_calls": 1,
+      "tool_errors": 0,
+      "duration_ms": 13272
+    }
+  },
+  "finished_at": "2026-10-29T18:44:56.227+00:00"
+}

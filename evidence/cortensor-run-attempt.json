@@ -1,0 +1,9 @@
+{
+  "sdk_version": "0.1.15",
+  "provider": "cortensor",
+  "ok": false,
+  "error": "ProviderError",
+  "code": "PROVIDER_ERROR",
+  "message": "The configured model provider failed before it could return a decision (Cortensor request failed: session_id=1: cortensor request failed: [WinError 10061] Hedef makine etkin olarak reddetti\u011finden ba\u011flant\u0131 kurulamad\u0131). Please retry or switch models.",
+  "model_inference": "failed"
+}

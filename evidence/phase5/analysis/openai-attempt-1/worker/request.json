@@ -1,0 +1,123 @@
+{
+  "provider": "openai",
+  "model": "gpt-4.1-mini",
+  "home": "~\\AppData\\Local\\mus\\work\\analysis-d1a05737\\home",
+  "tool_log": "~\\OneDrive\\Masa\u00fcst\u00fc\\cortensor-upgrade-scout\\evidence\\phase5\\analysis\\openai-attempt-1\\worker\\tool_calls.jsonl",
+  "result_path": "~\\OneDrive\\Masa\u00fcst\u00fc\\cortensor-upgrade-scout\\evidence\\phase5\\analysis\\openai-attempt-1\\worker\\result.json",
+  "session_id": "upgrade-scout-analysis",
+  "turn_timeout": 480.0,
+  "instructions": "You are Minion Upgrade Scout. You write a short upgrade brief for one OpenMinion SDK comparison.\n1. First call the comparison_evidence tool. It takes no arguments and returns the only facts you may use.\n2. Then reply with one JSON object and nothing else, matching this JSON schema:\n{\"$defs\":{\"Finding\":{\"additionalProperties\":false,\"properties\":{\"statement\":{\"maxLength\":600,\"minLength\":1,\"title\":\"Statement\",\"type\":\"string\"},\"evidence\":{\"description\":\"fact ids from comparison_evidence\",\"items\":{\"type\":\"string\"},\"maxItems\":8,\"minItems\":1,\"title\":\"Evidence\",\"type\":\"array\"}},\"required\":[\"statement\",\"evidence\"],\"title\":\"Finding\",\"type\":\"object\"},\"NextCheck\":{\"additionalProperties\":false,\"properties\":{\"action\":{\"maxLength\":300,\"minLength\":1,\"title\":\"Action\",\"type\":\"string\"},\"reason\":{\"maxLength\":600,\"minLength\":1,\"title\":\"Reason\",\"type\":\"string\"},\"evidence\":{\"description\":\"fact ids, if any\",\"items\":{\"type\":\"string\"},\"maxItems\":8,\"title\":\"Evidence\",\"type\":\"array\"}},\"required\":[\"action\",\"reason\"],\"title\":\"NextCheck\",\"type\":\"object\"}},\"additionalProperties\":false,\"description\":\"The only reply shape accepted from the model.\",\"properties\":{\"verdict\":{\"description\":\"exactly the deterministic verdict stated in fact V1\",\"title\":\"Verdict\",\"type\":\"string\"},\"summary\":{\"maxLength\":800,\"minLength\":1,\"title\":\"Summary\",\"type\":\"string\"},\"observed\":{\"description\":\"what the comparison measured\",\"items\":{\"$ref\":\"#/$defs/Finding\"},\"maxItems\":10,\"minItems\":1,\"title\":\"Observed\",\"type\":\"array\"},\"untested\":{\"description\":\"what these probes did not cover\",\"items\":{\"$ref\":\"#/$defs/Finding\"},\"maxItems\":10,\"minItems\":1,\"title\":\"Untested\",\"type\":\"array\"},\"rough_edges\":{\"items\":{\"$ref\":\"#/$defs/Finding\"},\"maxItems\":10,\"title\":\"Rough Edges\",\"type\":\"array\"},\"next_checks\":{\"description\":\"recommendations, not facts\",\"items\":{\"$ref\":\"#/$defs/NextCheck\"},\"maxItems\":8,\"minItems\":1,\"title\":\"Next Checks\",\"type\":\"array\"}},\"required\":[\"verdict\",\"summary\",\"observed\",\"untested\",\"next_checks\"],\"title\":\"UpgradeBrief\",\"type\":\"object\"}\nRules:\n- \"verdict\" must be exactly the deterministic verdict in fact V1. Never change, soften or upgrade it.\n- Every item in \"observed\", \"untested\" and \"rough_edges\" must cite fact ids from the tool result in \"evidence\". Cite only ids that the tool returned.\n- \"observed\": what the comparison measured. \"untested\": what it did not cover (cite the S facts). \"rough_edges\": problems or surprising behavior the facts show. \"next_checks\": practical checks to run next; these are recommendations, not facts.\n- State in \"untested\" that the echo-provider probes prove neither real model inference nor model-driven tool execution.\n- Do not add facts that are not in the tool result. Be concise.",
+  "message": "Write the upgrade brief for openminion 0.1.8 -> 0.1.15.",
+  "facts_payload": {
+    "report_sha256": "8b82e734b19d99b00f4e2d0eca44807f0ffeb6efa3660fa1743afc68a8e0fc93",
+    "verdict": "compatible",
+    "facts": [
+      {
+        "id": "V1",
+        "statement": "Deterministic verdict for openminion 0.1.8 -> 0.1.15: compatible (exit code 0); comparison complete: True.",
+        "evidence": [
+          "report.json"
+        ]
+      },
+      {
+        "id": "S1",
+        "statement": "Conclusions cover only the probes listed here: the public exports of openminion and openminion.api, the signatures of 6 entry points, one echo-provider Agent.run with default_channel set, and the documented minimal config without default_channel.",
+        "evidence": [
+          "report.json"
+        ]
+      },
+      {
+        "id": "S2",
+        "statement": "The echo provider makes no model call. These results prove neither real model inference nor model-driven tool execution; the forced tool is attached, and tool_calls is recorded per version.",
+        "evidence": [
+          "report.json"
+        ]
+      },
+      {
+        "id": "S3",
+        "statement": "Added exports and signature differences are reported as facts. Only removed exports, entry points or parameters, and newly required parameters, count as API regressions; other signature changes need review.",
+        "evidence": [
+          "report.json"
+        ]
+      },
+      {
+        "id": "S4",
+        "statement": "An export root or entry point that could not be measured in a version is a coverage gap: the comparison is incomplete for it, and it is not counted as a regression.",
+        "evidence": [
+          "report.json"
+        ]
+      },
+      {
+        "id": "S5",
+        "statement": "Providers, network, memory, skills, tasks, delegation and permissions are not exercised.",
+        "evidence": [
+          "report.json"
+        ]
+      },
+      {
+        "id": "P1",
+        "statement": "The baseline requested openminion 0.1.8; installed 0.1.8; imported __version__ 0.1.8; Python 3.13.5 on Windows-11-10.0.26200-SP0; environment ok.",
+        "evidence": [
+          "baseline-0.1.8/environment.json",
+          "baseline-0.1.8/preflight.json"
+        ]
+      },
+      {
+        "id": "P2",
+        "statement": "The candidate requested openminion 0.1.15; installed 0.1.15; imported __version__ 0.1.15; Python 3.13.5 on Windows-11-10.0.26200-SP0; environment ok.",
+        "evidence": [
+          "candidate-0.1.15/environment.json",
+          "candidate-0.1.15/preflight.json"
+        ]
+      },
+      {
+        "id": "X1",
+        "statement": "Exports of openminion: 12 names in 0.1.8, 12 in 0.1.15; added none; removed none.",
+        "evidence": [
+          "baseline-0.1.8/surface.json",
+          "candidate-0.1.15/surface.json"
+        ]
+      },
+      {
+        "id": "X2",
+        "statement": "Exports of openminion.api: 15 names in 0.1.8, 15 in 0.1.15; added none; removed none.",
+        "evidence": [
+          "baseline-0.1.8/surface.json",
+          "candidate-0.1.15/surface.json"
+        ]
+      },
+      {
+        "id": "G1",
+        "statement": "Entry-point signatures identical in both versions: openminion.Agent, openminion.Agent.run, openminion.Agent.run_stream, openminion.tool, openminion.APIRuntime.from_config_path, openminion.APIRuntime.run_turn.",
+        "evidence": [
+          "baseline-0.1.8/surface.json",
+          "candidate-0.1.15/surface.json"
+        ]
+      },
+      {
+        "id": "B1",
+        "statement": "Echo contract (completed, echoed_message, echo_provider, session_preserved): baseline contract_met, candidate contract_met; failed checks {'baseline': [], 'candidate': []}; classification unchanged.",
+        "evidence": [
+          "baseline-0.1.8/echo_turn.json",
+          "candidate-0.1.15/echo_turn.json"
+        ]
+      },
+      {
+        "id": "B2",
+        "statement": "Echo telemetry (no model call): baseline llm_calls=1 tool_calls=0 input_tokens=0 output_tokens=0; candidate llm_calls=1 tool_calls=0 input_tokens=0 output_tokens=0.",
+        "evidence": [
+          "baseline-0.1.8/echo_turn.json",
+          "candidate-0.1.15/echo_turn.json"
+        ]
+      },
+      {
+        "id": "B3",
+        "statement": "Documented minimal config without default_channel: baseline rejected_invalid_channel, candidate rejected_invalid_channel (unchanged); candidate error: inbound authenticity denied (reason=invalid_channel, mode=warn).",
+        "evidence": [
+          "baseline-0.1.8/minimal_config.json",
+          "candidate-0.1.15/minimal_config.json"
+        ]
+      }
+    ]
+  }
+}

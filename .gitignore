@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Environments and secrets
+.venv/
+.venvs/
+.env
+
+# Tooling
+.pytest_cache/
+
+# OpenMinion runtime state: the scout's project-local home, and the
+# .openminion/ directories APIRuntime creates under the working directory.
+.scout-home/
+.openminion/
+
+# Default `compare` output and demo recordings (retained evidence lives in evidence/).
+scout-reports/
+demo/

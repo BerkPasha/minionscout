@@ -1,0 +1,68 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.5, pytest-8.4.2, pluggy-1.7.0 -- <repo>\.venv\Scripts\python.exe
+rootdir: <repo>
+configfile: pyproject.toml
+testpaths: tests
+plugins: anyio-4.15.1, platformdirs-4.14.0
+collecting ... collected 56 items
+
+tests/test_cli.py::test_surface_prints_json PASSED                       [  1%]
+tests/test_cli.py::test_run_refuses_a_provider_whose_key_is_missing PASSED [  3%]
+tests/test_cli.py::test_run_on_echo_prints_a_run_record PASSED           [  5%]
+tests/test_compare.py::test_identical_behavior_is_compatible_without_false_regressions PASSED [  7%]
+tests/test_compare.py::test_added_export_is_not_a_regression PASSED      [  8%]
+tests/test_compare.py::test_removed_export_is_a_regression PASSED        [ 10%]
+tests/test_compare.py::test_signature_text_change_alone_needs_review_but_is_not_a_regression PASSED [ 12%]
+tests/test_compare.py::test_added_optional_parameter_is_not_a_regression PASSED [ 14%]
+tests/test_compare.py::test_removed_and_newly_required_parameters_are_regressions PASSED [ 16%]
+tests/test_compare.py::test_symbol_missing_in_candidate_becomes_evidence_not_a_crash PASSED [ 17%]
+tests/test_compare.py::test_symbol_missing_in_both_versions_is_reported_without_a_regression PASSED [ 19%]
+tests/test_compare.py::test_export_root_that_fails_to_import_in_candidate_is_a_regression PASSED [ 21%]
+tests/test_compare.py::test_echo_turn_that_starts_failing_is_a_behavior_regression PASSED [ 23%]
+tests/test_compare.py::test_minimal_config_fix_is_reported_as_a_change_not_a_regression PASSED [ 25%]
+tests/test_compare.py::test_minimal_config_that_stops_working_is_a_regression PASSED [ 26%]
+tests/test_compare.py::test_install_failure_is_an_inconclusive_environment_failure PASSED [ 28%]
+tests/test_compare.py::test_worker_timeout_is_incomplete_and_not_an_sdk_failure PASSED [ 30%]
+tests/test_compare.py::test_preflight_loopback_failure_is_an_environment_failure PASSED [ 32%]
+tests/test_compare.py::test_a_regression_takes_precedence_over_incomplete_stages PASSED [ 33%]
+tests/test_compare.py::test_required_probe_failing_in_both_versions_is_inconclusive PASSED [ 35%]
+tests/test_compare.py::test_markdown_states_scope_and_never_claims_compatible_when_incomplete[False] PASSED [ 37%]
+tests/test_compare.py::test_markdown_states_scope_and_never_claims_compatible_when_incomplete[True] PASSED [ 39%]
+tests/test_live.py::test_live_model_run_uses_the_tool SKIPPED (set S...) [ 41%]
+tests/test_probe.py::test_resolve_records_a_missing_module_and_attribute PASSED [ 42%]
+tests/test_probe.py::test_describe_signature_records_an_unavailable_signature PASSED [ 44%]
+tests/test_probe.py::test_collect_surface_turns_missing_symbols_into_evidence PASSED [ 46%]
+tests/test_probe.py::test_redact_replaces_the_home_directory_in_plain_and_json_text PASSED [ 48%]
+tests/test_probe.py::test_write_text_atomic_retries_a_transiently_locked_target PASSED [ 50%]
+tests/test_probe.py::test_write_text_atomic_gives_up_after_its_attempts PASSED [ 51%]
+tests/test_probe.py::test_probe_surface_stage_runs_isolated_as_a_script PASSED [ 53%]
+tests/test_probe.py::test_probe_preflight_stage_runs_isolated_as_a_script PASSED [ 55%]
+tests/test_sdk_smoke.py::test_installed_sdk_is_the_pinned_baseline PASSED [ 57%]
+tests/test_sdk_smoke.py::test_documented_exports_are_present PASSED      [ 58%]
+tests/test_sdk_smoke.py::test_agent_accepts_documented_keywords PASSED   [ 60%]
+tests/test_sdk_smoke.py::test_agent_initializes_and_closes_with_a_tool PASSED [ 62%]
+tests/test_sdk_smoke.py::test_agent_rejects_an_undecorated_tool PASSED   [ 64%]
+tests/test_sdk_smoke.py::test_echo_turn_runs_end_to_end PASSED           [ 66%]
+tests/test_sdk_smoke.py::test_documented_minimal_config_is_denied_without_default_channel PASSED [ 67%]
+tests/test_sdk_smoke.py::test_sdk_surface_snapshot_matches_the_install PASSED [ 69%]
+tests/test_workers.py::test_run_bounded_kills_a_hung_worker PASSED       [ 71%]
+tests/test_workers.py::test_run_bounded_keeps_the_log_of_a_failing_worker PASSED [ 73%]
+tests/test_workers.py::test_run_bounded_reports_a_missing_executable PASSED [ 75%]
+tests/test_workers.py::test_run_stage_keeps_partial_evidence_when_the_worker_hangs PASSED [ 76%]
+tests/test_workers.py::test_run_stage_without_a_result_file_is_crashed PASSED [ 78%]
+tests/test_workers.py::test_run_stage_with_a_complete_result_is_completed PASSED [ 80%]
+tests/test_workers.py::test_run_stage_accepts_a_relative_evidence_dir PASSED [ 82%]
+tests/test_workers.py::test_too_deep_environment_path_fails_before_creating_anything PASSED [ 83%]
+tests/test_workers.py::test_preflight_results_gate_later_stages PASSED   [ 85%]
+tests/test_workers.py::test_compare_rejects_invalid_versions_before_doing_anything[latest] PASSED [ 87%]
+tests/test_workers.py::test_compare_rejects_invalid_versions_before_doing_anything[0.1] PASSED [ 89%]
+tests/test_workers.py::test_compare_rejects_invalid_versions_before_doing_anything[0.1.8;calc] PASSED [ 91%]
+tests/test_workers.py::test_compare_rejects_invalid_versions_before_doing_anything[0.1.8 --index-url=http://x] PASSED [ 92%]
+tests/test_workers.py::test_compare_rejects_invalid_versions_before_doing_anything[] PASSED [ 94%]
+tests/test_workers.py::test_compare_rejects_invalid_versions_before_doing_anything[v0.1.8] PASSED [ 96%]
+tests/test_workers.py::test_compare_refuses_a_non_empty_directory_it_did_not_create PASSED [ 98%]
+tests/test_workers.py::test_compare_rejects_non_positive_timeouts PASSED [100%]
+
+=========================== short test summary info ===========================
+SKIPPED [1] tests\test_live.py:18: set SCOUT_LIVE_PROVIDER and its API key for a real model run
+======================= 55 passed, 1 skipped in 17.89s ========================

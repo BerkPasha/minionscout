@@ -1,0 +1,398 @@
+{
+  "complete": true,
+  "current_step": null,
+  "finished_at": "2026-10-29T13:53:21+00:00",
+  "probe_schema": 1,
+  "requested_version": "0.1.15",
+  "stage": "surface",
+  "started_at": "2026-10-29T13:53:18+00:00",
+  "surface": {
+    "export_errors": {},
+    "exports": {
+      "openminion": [
+        "APIRuntime",
+        "Agent",
+        "AgentOutputValidationError",
+        "AgentRunResult",
+        "Handoff",
+        "MemoryBundle",
+        "OpenMinionConfig",
+        "ProviderError",
+        "TurnTimeoutError",
+        "__version__",
+        "subagent",
+        "tool"
+      ],
+      "openminion.api": [
+        "APIRuntime",
+        "Agent",
+        "AgentOutputValidationError",
+        "AgentRunResult",
+        "Handoff",
+        "ProviderError",
+        "RuntimeTurnHandle",
+        "ToolCallSummary",
+        "TurnChunk",
+        "TurnError",
+        "TurnResponse",
+        "TurnTelemetry",
+        "TurnTimeoutError",
+        "dispatch_request",
+        "subagent"
+      ]
+    },
+    "parameters": {
+      "openminion.APIRuntime.from_config_path": [
+        {
+          "annotation": "str | None",
+          "default": null,
+          "has_default": false,
+          "kind": "POSITIONAL_OR_KEYWORD",
+          "name": "config_path"
+        },
+        {
+          "annotation": "str | PathLike[str] | None",
+          "default": "None",
+          "has_default": true,
+          "kind": "KEYWORD_ONLY",
+          "name": "home_root"
+        },
+        {
+          "annotation": "str | PathLike[str] | None",
+          "default": "None",
+          "has_default": true,
+          "kind": "KEYWORD_ONLY",
+          "name": "data_root"
+        },
+        {
+          "annotation": "RunProfileOverrides | None",
+          "default": "None",
+          "has_default": true,
+          "kind": "KEYWORD_ONLY",
+          "name": "run_profile_overrides"
+        },
+        {
+          "annotation": "str",
+          "default": "'default'",
+          "has_default": true,
+          "kind": "KEYWORD_ONLY",
+          "name": "logging_mode"
+        }
+      ],
+      "openminion.APIRuntime.run_turn": [
+        {
+          "annotation": null,
+          "default": null,
+          "has_default": false,
+          "kind": "POSITIONAL_OR_KEYWORD",
+          "name": "self"
+        },
+        {
+          "annotation": "dict[str, object]",
+          "default": null,
+          "has_default": false,
+          "kind": "KEYWORD_ONLY",
+          "name": "payload"
+        },
+        {
+          "annotation": "str | None",
+          "default": "None",
+          "has_default": true,
+          "kind": "KEYWORD_ONLY",
+          "name": "request_id"
+        },
+        {
+          "annotation": "typing.Optional[typing.Callable[[object], NoneType]]",
+          "default": "None",
+          "has_default": true,
+          "kind": "KEYWORD_ONLY",
+          "name": "progress_callback"
+        },
+        {
+          "annotation": "typing.Any | None",
+          "default": "None",
+          "has_default": true,
+          "kind": "KEYWORD_ONLY",
+          "name": "approval_callback"
+        },
+        {
+          "annotation": "typing.Any | None",
+          "default": "None",
+          "has_default": true,
+          "kind": "KEYWORD_ONLY",
+          "name": "cancel_event"
+        },
+        {
+          "annotation": "typing.Any | None",
+          "default": "None",
+          "has_default": true,
+          "kind": "KEYWORD_ONLY",
+          "name": "trusted_subagent_context"
+        }
+      ],
+      "openminion.Agent": [
+        {
+          "annotation": null,
+          "default": null,
+          "has_default": false,
+          "kind": "POSITIONAL_OR_KEYWORD",
+          "name": "self"
+        },
+        {
+          "annotation": "str | None",
+          "default": "None",
+          "has_default": true,
+          "kind": "KEYWORD_ONLY",
+          "name": "instructions"
+        },
+        {
+          "annotation": "type[OutputT] | None",
+          "default": "None",
+          "has_default": true,
+          "kind": "KEYWORD_ONLY",
+          "name": "output_type"
+        },
+        {
+          "annotation": "APIRuntime | None",
+          "default": "None",
+          "has_default": true,
+          "kind": "KEYWORD_ONLY",
+          "name": "runtime"
+        },
+        {
+          "annotation": "str | None",
+          "default": "None",
+          "has_default": true,
+          "kind": "KEYWORD_ONLY",
+          "name": "config_path"
+        },
+        {
+          "annotation": "str | None",
+          "default": "None",
+          "has_default": true,
+          "kind": "KEYWORD_ONLY",
+          "name": "agent_id"
+        },
+        {
+          "annotation": "str | None",
+          "default": "None",
+          "has_default": true,
+          "kind": "KEYWORD_ONLY",
+          "name": "model"
+        },
+        {
+          "annotation": "list[ToolInput] | None",
+          "default": "None",
+          "has_default": true,
+          "kind": "KEYWORD_ONLY",
+          "name": "tools"
+        },
+        {
+          "annotation": "list[str] | None",
+          "default": "None",
+          "has_default": true,
+          "kind": "KEYWORD_ONLY",
+          "name": "forced_tools"
+        },
+        {
+          "annotation": "list['Handoff'] | None",
+          "default": "None",
+          "has_default": true,
+          "kind": "KEYWORD_ONLY",
+          "name": "handoffs"
+        },
+        {
+          "annotation": "str | None",
+          "default": "None",
+          "has_default": true,
+          "kind": "KEYWORD_ONLY",
+          "name": "name"
+        },
+        {
+          "annotation": "str | None",
+          "default": "None",
+          "has_default": true,
+          "kind": "KEYWORD_ONLY",
+          "name": "session_id"
+        },
+        {
+          "annotation": "'SubagentRunContext | None'",
+          "default": "None",
+          "has_default": true,
+          "kind": "KEYWORD_ONLY",
+          "name": "subagent_context"
+        },
+        {
+          "annotation": "'DelegatedMemoryReadRequest | None'",
+          "default": "None",
+          "has_default": true,
+          "kind": "KEYWORD_ONLY",
+          "name": "delegated_memory_request"
+        }
+      ],
+      "openminion.Agent.run": [
+        {
+          "annotation": null,
+          "default": null,
+          "has_default": false,
+          "kind": "POSITIONAL_OR_KEYWORD",
+          "name": "self"
+        },
+        {
+          "annotation": "InputT",
+          "default": null,
+          "has_default": false,
+          "kind": "POSITIONAL_OR_KEYWORD",
+          "name": "message"
+        },
+        {
+          "annotation": "str | None",
+          "default": "None",
+          "has_default": true,
+          "kind": "KEYWORD_ONLY",
+          "name": "session_id"
+        },
+        {
+          "annotation": "float | None",
+          "default": "None",
+          "has_default": true,
+          "kind": "KEYWORD_ONLY",
+          "name": "timeout_seconds"
+        },
+        {
+          "annotation": "_ApprovalCallback | None",
+          "default": "None",
+          "has_default": true,
+          "kind": "KEYWORD_ONLY",
+          "name": "approval_callback"
+        },
+        {
+          "annotation": "Event | None",
+          "default": "None",
+          "has_default": true,
+          "kind": "KEYWORD_ONLY",
+          "name": "cancel_event"
+        }
+      ],
+      "openminion.Agent.run_stream": [
+        {
+          "annotation": null,
+          "default": null,
+          "has_default": false,
+          "kind": "POSITIONAL_OR_KEYWORD",
+          "name": "self"
+        },
+        {
+          "annotation": "InputT",
+          "default": null,
+          "has_default": false,
+          "kind": "POSITIONAL_OR_KEYWORD",
+          "name": "message"
+        },
+        {
+          "annotation": "str | None",
+          "default": "None",
+          "has_default": true,
+          "kind": "KEYWORD_ONLY",
+          "name": "session_id"
+        },
+        {
+          "annotation": "Callable[[object], None] | None",
+          "default": "None",
+          "has_default": true,
+          "kind": "KEYWORD_ONLY",
+          "name": "on_delta"
+        },
+        {
+          "annotation": "float | None",
+          "default": "None",
+          "has_default": true,
+          "kind": "KEYWORD_ONLY",
+          "name": "timeout_seconds"
+        },
+        {
+          "annotation": "_ApprovalCallback | None",
+          "default": "None",
+          "has_default": true,
+          "kind": "KEYWORD_ONLY",
+          "name": "approval_callback"
+        },
+        {
+          "annotation": "Event | None",
+          "default": "None",
+          "has_default": true,
+          "kind": "KEYWORD_ONLY",
+          "name": "cancel_event"
+        }
+      ],
+      "openminion.tool": [
+        {
+          "annotation": "collections.abc.Callable[..., typing.Any] | None",
+          "default": "None",
+          "has_default": true,
+          "kind": "POSITIONAL_OR_KEYWORD",
+          "name": "func"
+        },
+        {
+          "annotation": "typing.Optional[str]",
+          "default": "None",
+          "has_default": true,
+          "kind": "KEYWORD_ONLY",
+          "name": "name"
+        },
+        {
+          "annotation": "typing.Optional[str]",
+          "default": "None",
+          "has_default": true,
+          "kind": "KEYWORD_ONLY",
+          "name": "description"
+        },
+        {
+          "annotation": "typing.Optional[str]",
+          "default": "None",
+          "has_default": true,
+          "kind": "KEYWORD_ONLY",
+          "name": "min_scope"
+        },
+        {
+          "annotation": "<class 'bool'>",
+          "default": "False",
+          "has_default": true,
+          "kind": "KEYWORD_ONLY",
+          "name": "dangerous"
+        },
+        {
+          "annotation": "<class 'bool'>",
+          "default": "False",
+          "has_default": true,
+          "kind": "KEYWORD_ONLY",
+          "name": "idempotent"
+        },
+        {
+          "annotation": "tuple[str, ...]",
+          "default": "()",
+          "has_default": true,
+          "kind": "KEYWORD_ONLY",
+          "name": "tags"
+        },
+        {
+          "annotation": "tuple[str, ...]",
+          "default": "()",
+          "has_default": true,
+          "kind": "KEYWORD_ONLY",
+          "name": "capabilities"
+        }
+      ]
+    },
+    "sdk_version": "0.1.15",
+    "signatures": {
+      "openminion.APIRuntime.from_config_path": "(config_path: 'str | None', *, home_root: 'str | PathLike[str] | None' = None, data_root: 'str | PathLike[str] | None' = None, run_profile_overrides: 'RunProfileOverrides | None' = None, logging_mode: 'str' = 'default') -> 'Any'",
+      "openminion.APIRuntime.run_turn": "(self, *, payload: dict[str, object], request_id: str | None = None, progress_callback: Optional[Callable[[object], NoneType]] = None, approval_callback: typing.Any | None = None, cancel_event: typing.Any | None = None, trusted_subagent_context: typing.Any | None = None) -> dict[str, object]",
+      "openminion.Agent": "(self, *, instructions: 'str | None' = None, output_type: 'type[OutputT] | None' = None, runtime: 'APIRuntime | None' = None, config_path: 'str | None' = None, agent_id: 'str | None' = None, model: 'str | None' = None, tools: 'list[ToolInput] | None' = None, forced_tools: 'list[str] | None' = None, handoffs: \"list['Handoff'] | None\" = None, name: 'str | None' = None, session_id: 'str | None' = None, subagent_context: \"'SubagentRunContext | None'\" = None, delegated_memory_request: \"'DelegatedMemoryReadRequest | None'\" = None) -> 'None'",
+      "openminion.Agent.run": "(self, message: 'InputT', *, session_id: 'str | None' = None, timeout_seconds: 'float | None' = None, approval_callback: '_ApprovalCallback | None' = None, cancel_event: 'Event | None' = None) -> 'AgentRunResult[OutputT]'",
+      "openminion.Agent.run_stream": "(self, message: 'InputT', *, session_id: 'str | None' = None, on_delta: 'Callable[[object], None] | None' = None, timeout_seconds: 'float | None' = None, approval_callback: '_ApprovalCallback | None' = None, cancel_event: 'Event | None' = None) -> 'AgentRunResult[OutputT]'",
+      "openminion.tool": "(func: collections.abc.Callable[..., typing.Any] | None = None, *, name: Optional[str] = None, description: Optional[str] = None, min_scope: Optional[str] = None, dangerous: bool = False, idempotent: bool = False, tags: tuple[str, ...] = (), capabilities: tuple[str, ...] = ()) -> Any"
+    },
+    "unresolved": {}
+  }
+}

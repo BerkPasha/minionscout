@@ -1,0 +1,47 @@
+{
+  "note": "Raw model output, exactly as returned (model-written). The factual report does not use it.",
+  "accepted": true,
+  "output": {
+    "key_observations": [
+      "R0",
+      "B1",
+      "G1",
+      "C0",
+      "X1",
+      "X2"
+    ],
+    "relevant_limitations": [
+      "S1",
+      "S2",
+      "S3",
+      "S4",
+      "S5"
+    ],
+    "next_checks": [
+      {
+        "check_id": "validate_with_real_provider",
+        "rationale": "This check is important because the echo probes do not demonstrate real model inference or model-driven tool execution, which are critical for validating upgrade behavior in production-like scenarios.",
+        "evidence": [
+          "S2",
+          "B1",
+          "B2"
+        ]
+      },
+      {
+        "check_id": "test_uncovered_building_blocks",
+        "rationale": "Testing building blocks like memory, skills, tasks, delegation, and permissions is necessary because these aspects are not exercised by the existing probes, leaving gaps in coverage for the upgrade evaluation.",
+        "evidence": [
+          "S5"
+        ]
+      },
+      {
+        "check_id": "set_default_channel",
+        "rationale": "Setting default_channel on agents relying on the minimal config matters since the candidate version rejects the documented minimal config due to invalid_channel errors, potentially impacting upgrade smoothness.",
+        "evidence": [
+          "B3",
+          "S1"
+        ]
+      }
+    ]
+  }
+}

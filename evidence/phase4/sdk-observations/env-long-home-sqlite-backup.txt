@@ -1,0 +1,7 @@
+# Environment observation (Windows, LongPathsEnabled=0): CLI after an SDK runtime start in a deep OPENMINION_HOME
+# home path depth: policy.db path is 185 characters; longest file already under that home: 255 characters
+# steps: fresh home with the minimal config; python -c 'APIRuntime.from_config_path(None).close()'; openminion run "hello cli"
+# result: exit=2
+openminion: SQLite online backup failed for <long temp dir>\f1f2\homeH\.openminion\policy\policy.db: unable to open database file
+# same steps under a short home (%LOCALAPPDATA%\mus\work\...): exit=0, 'default: hello cli (thinking=minimal)'
+# not verified: which file the SQLite backup tried to create; path length is the likely cause, not a confirmed SDK defect

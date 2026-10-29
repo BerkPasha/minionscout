@@ -1,0 +1,85 @@
+# F9: tool results reach the model cut to 1200 characters per string
+# openminion 0.1.15 (controller .venv), Windows 11, Python 3.13.5
+# OFFLINE DIAGNOSTIC with a MOCKED local OpenAI-compatible endpoint (tests/test_instruction_capture.py).
+# No network, no key, no paid call. It replays openai-attempt-4's real worker request (instructions, message,
+# facts_payload) through the real analysis worker and installed SDK, and records every provider request body.
+# The mocked endpoint's request sequence is not the live one; the tool-message construction path is the same.
+# command: .venv/Scripts/python evidence/phase5/sdk-observations/f9_capture_tool_result.py <repo> <out_dir>
+
+## installed SDK source (read only)
+modules/brain/constants.py:75:TOOL_MESSAGE_DEPTH_LIMIT = 8
+modules/brain/constants.py:76:TOOL_MESSAGE_SEQUENCE_LIMIT = 16
+modules/brain/constants.py:77:TOOL_MESSAGE_STRING_LIMIT = 1200
+modules/brain/loop/tools/messages.py:19:def _truncate_tool_message_text(
+modules/brain/loop/tools/messages.py:25:    return f"{text[:limit]}...[truncated]"
+modules/brain/loop/tools/messages.py:46:            for item in list(value)[:TOOL_MESSAGE_SEQUENCE_LIMIT]
+modules/brain/loop/tools/messages.py:63:        "summary": _truncate_tool_message_text(action_result.summary or ""),
+modules/brain/loop/tools/messages.py:66:        payload["outputs"] = _compact_tool_message_value(action_result.outputs)
+
+## replay output
+worker status: completed | stats: {'input_tokens': 3, 'output_tokens': 3, 'cache_read_tokens': 0, 'llm_calls': 1, 'tool_calls': 1, 'tool_errors': 0, 'duration_ms': 742}
+provider requests captured: 8
+tool payload returned by the Python body: 4294 chars
+--- request 0: tool_choice={"type": "function", "function": {"name": "submit_output"}} tools=['submit_output']
+  role=system    chars=7555 tool_calls=False
+  role=system    chars=346 tool_calls=False
+  role=user      chars=2682 tool_calls=False
+--- request 1: tool_choice="auto" tools=['comparison_evidence']
+  role=system    chars=410 tool_calls=False
+  role=system    chars=9389 tool_calls=False
+  role=user      chars=2682 tool_calls=False
+--- request 2: tool_choice={"type": "function", "function": {"name": "submit_output"}} tools=['submit_output']
+  role=system    chars=742 tool_calls=False
+  role=system    chars=346 tool_calls=False
+  role=user      chars=2801 tool_calls=False
+--- request 3: tool_choice={"type": "function", "function": {"name": "submit_output"}} tools=['submit_output']
+  role=system    chars=1394 tool_calls=False
+  role=system    chars=346 tool_calls=False
+  role=user      chars=2801 tool_calls=False
+--- request 4: tool_choice="auto" tools=['comparison_evidence']
+  role=system    chars=410 tool_calls=False
+  role=system    chars=5438 tool_calls=False
+  role=user      chars=2682 tool_calls=False
+  role=assistant chars=0 tool_calls=True
+  role=tool      chars=1362 tool_calls=False
+    identical to payload: False | payload is a prefix-substring: False
+    contains "S5": False
+    contains "P1": False
+    contains "X1": False
+    contains "G1": False
+    contains "C0": False
+    contains "B3": False
+    contains next_check_options: False
+    contains validate_with_real_provider: False
+    tail: ' regressions; other signature changes need review.\\"}, {\\"category\\": \\"scope_rule\\", \\"id\\": \\"S4\\", \\"statement\\": \\"An export root or entry point that could not be measured in a version is a coverage gap: the comparison is incomplete for it, and it is not counted as a regression....[truncated]"}}'
+  role=user      chars=3012 tool_calls=False
+--- request 5: tool_choice="auto" tools=['comparison_evidence']
+  role=system    chars=410 tool_calls=False
+  role=system    chars=5800 tool_calls=False
+  role=user      chars=2682 tool_calls=False
+  role=assistant chars=0 tool_calls=True
+  role=tool      chars=1362 tool_calls=False
+    identical to payload: False | payload is a prefix-substring: False
+    contains "S5": False
+    contains "P1": False
+    contains "X1": False
+    contains "G1": False
+    contains "C0": False
+    contains "B3": False
+    contains next_check_options: False
+    contains validate_with_real_provider: False
+    tail: ' regressions; other signature changes need review.\\"}, {\\"category\\": \\"scope_rule\\", \\"id\\": \\"S4\\", \\"statement\\": \\"An export root or entry point that could not be measured in a version is a coverage gap: the comparison is incomplete for it, and it is not counted as a regression....[truncated]"}}'
+  role=user      chars=3012 tool_calls=False
+--- request 6: tool_choice={"type": "function", "function": {"name": "submit_output"}} tools=['submit_output']
+  role=system    chars=6332 tool_calls=False
+  role=system    chars=376 tool_calls=False
+  role=user      chars=3012 tool_calls=False
+--- request 7: tool_choice={"type": "function", "function": {"name": "submit_output"}} tools=['submit_output']
+  role=system    chars=10736 tool_calls=False
+  role=system    chars=346 tool_calls=False
+  role=user      chars=2682 tool_calls=False
+
+## which fact ids fall inside the first 1200 characters of each real attempt's tool payload
+attempt-2: payload 3631 chars, 14 facts; visible: ['V1', 'S1', 'S2', 'S3', 'S4']; hidden: ['S5', 'P1', 'P2', 'X1', 'X2', 'G1', 'B1', 'B2', 'B3']; next_check_options visible: False; worker status: output_invalid; ids in model output: []
+attempt-3: payload 3631 chars, 14 facts; visible: ['V1', 'S1', 'S2', 'S3', 'S4']; hidden: ['S5', 'P1', 'P2', 'X1', 'X2', 'G1', 'B1', 'B2', 'B3']; next_check_options visible: False; worker status: completed; ids in model output: ['S1', 'S2', 'S3', 'S4', 'V1']
+attempt-4: payload 4294 chars, 17 facts; visible: ['V1', 'S1', 'S2', 'S3', 'S4']; hidden: ['S5', 'P1', 'P2', 'R0', 'X1', 'X2', 'G1', 'C0', 'N0', 'B1', 'B2', 'B3']; next_check_options visible: False; worker status: completed; ids in model output: ['C1', 'C2', 'C3', 'O1', 'O2', 'O3', 'S1', 'S2', 'S3', 'S4']

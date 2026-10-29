@@ -1,0 +1,11 @@
+{
+  "sdk_version": "0.1.15",
+  "started_at": "2026-10-29T14:27:24.661+00:00",
+  "status": "output_invalid",
+  "raw_text": "scout: Write the upgrade brief for openminion 0.1.8 -> 0.1.15. (thinking=minimal)",
+  "error": {
+    "type": "AgentOutputValidationError",
+    "message": "Reply did not validate against UpgradeBrief: 1 validation error for UpgradeBrief\n  Invalid JSON: expected value at line 1 column 1 [type=json_invalid, input_value='scout: Write the upgrade....15. (thinking=minimal)', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/json_invalid"
+  },
+  "finished_at": "2026-10-29T14:27:26.224+00:00"
+}

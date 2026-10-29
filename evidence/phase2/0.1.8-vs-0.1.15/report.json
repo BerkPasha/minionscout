@@ -1,0 +1,232 @@
+{
+  "schema": "minion-upgrade-scout/compare/1",
+  "generated_at": "2026-10-29T13:52:39+00:00",
+  "tool_version": "0.2.0",
+  "controller": {
+    "python": "3.13.5",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "request": {
+    "baseline": "0.1.8",
+    "candidate": "0.1.15",
+    "timeouts_seconds": {
+      "venv": 300,
+      "install": 900,
+      "preflight": 60,
+      "probe": 300
+    },
+    "state_root": "~\\AppData\\Local\\mus",
+    "probe_session_id": "upgrade-scout-probe"
+  },
+  "scope": [
+    "Conclusions cover only the probes listed here: the public exports of openminion and openminion.api, the signatures of 6 entry points, one echo-provider Agent.run with default_channel set, and the documented minimal config without default_channel.",
+    "The echo provider makes no model call. These results prove neither real model inference nor model-driven tool execution; the forced tool is attached, and tool_calls is recorded per version.",
+    "Added exports and signature differences are reported as facts. Only removed exports, entry points or parameters, and newly required parameters, count as API regressions; other signature changes need review.",
+    "Providers, network, memory, skills, tasks, delegation and permissions are not exercised."
+  ],
+  "versions": {
+    "baseline": {
+      "requested_version": "0.1.8",
+      "installed_version": "0.1.8",
+      "imported_version": "0.1.8",
+      "python": "3.13.5",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "environment": {
+        "status": "ok",
+        "failure": null,
+        "env_dir": "~\\AppData\\Local\\mus\\envs\\0.1.8"
+      },
+      "evidence_dir": "baseline-0.1.8",
+      "stages": {
+        "preflight": {
+          "status": "completed",
+          "evidence": "preflight.json",
+          "seconds": 0.488,
+          "log": "preflight.log"
+        },
+        "surface": {
+          "status": "completed",
+          "evidence": "surface.json",
+          "seconds": 4.774,
+          "log": "surface.log"
+        },
+        "echo_turn": {
+          "status": "completed",
+          "evidence": "echo_turn.json",
+          "outcome": "completed",
+          "seconds": 6.844,
+          "log": "echo_turn.log"
+        },
+        "minimal_config": {
+          "status": "completed",
+          "evidence": "minimal_config.json",
+          "outcome": "raised",
+          "seconds": 6.09,
+          "log": "minimal_config.log"
+        }
+      }
+    },
+    "candidate": {
+      "requested_version": "0.1.15",
+      "installed_version": "0.1.15",
+      "imported_version": "0.1.15",
+      "python": "3.13.5",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "environment": {
+        "status": "ok",
+        "failure": null,
+        "env_dir": "~\\AppData\\Local\\mus\\envs\\0.1.15"
+      },
+      "evidence_dir": "candidate-0.1.15",
+      "stages": {
+        "preflight": {
+          "status": "completed",
+          "evidence": "preflight.json",
+          "seconds": 0.324,
+          "log": "preflight.log"
+        },
+        "surface": {
+          "status": "completed",
+          "evidence": "surface.json",
+          "seconds": 4.767,
+          "log": "surface.log"
+        },
+        "echo_turn": {
+          "status": "completed",
+          "evidence": "echo_turn.json",
+          "outcome": "completed",
+          "seconds": 6.916,
+          "log": "echo_turn.log"
+        },
+        "minimal_config": {
+          "status": "completed",
+          "evidence": "minimal_config.json",
+          "outcome": "raised",
+          "seconds": 6.132,
+          "log": "minimal_config.log"
+        }
+      }
+    }
+  },
+  "regressions": [],
+  "environment_failures": [],
+  "incomplete": [],
+  "exports": {
+    "openminion": {
+      "added": [],
+      "removed": []
+    },
+    "openminion.api": {
+      "added": [],
+      "removed": []
+    }
+  },
+  "signatures": {
+    "unchanged": [
+      "openminion.Agent",
+      "openminion.Agent.run",
+      "openminion.Agent.run_stream",
+      "openminion.tool",
+      "openminion.APIRuntime.from_config_path",
+      "openminion.APIRuntime.run_turn"
+    ],
+    "changed": [],
+    "missing_in_candidate": [],
+    "missing_in_baseline": [],
+    "missing_in_both": []
+  },
+  "behavior": [
+    {
+      "probe": "echo_turn",
+      "required": true,
+      "baseline": "completed",
+      "candidate": "completed",
+      "differences": {},
+      "classification": "unchanged",
+      "observed": {
+        "baseline": {
+          "run_state": "completed",
+          "session_id": "upgrade-scout-probe",
+          "has_run_id": true,
+          "text_contains_message": true,
+          "runtime_provider": "echo",
+          "result_type": "AgentRunResult",
+          "stats_keys": [
+            "cache_read_tokens",
+            "duration_ms",
+            "input_tokens",
+            "llm_calls",
+            "output_tokens",
+            "tool_calls",
+            "tool_errors"
+          ],
+          "llm_calls": 1,
+          "tool_calls": 0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "result_fields": [
+            "id",
+            "metadata",
+            "output",
+            "raw",
+            "run_id",
+            "run_state",
+            "session_id",
+            "stats",
+            "text"
+          ]
+        },
+        "candidate": {
+          "run_state": "completed",
+          "session_id": "upgrade-scout-probe",
+          "has_run_id": true,
+          "text_contains_message": true,
+          "runtime_provider": "echo",
+          "result_type": "AgentRunResult",
+          "stats_keys": [
+            "cache_read_tokens",
+            "duration_ms",
+            "input_tokens",
+            "llm_calls",
+            "output_tokens",
+            "tool_calls",
+            "tool_errors"
+          ],
+          "llm_calls": 1,
+          "tool_calls": 0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "result_fields": [
+            "id",
+            "metadata",
+            "output",
+            "raw",
+            "run_id",
+            "run_state",
+            "session_id",
+            "stats",
+            "text"
+          ]
+        }
+      }
+    },
+    {
+      "probe": "minimal_config",
+      "required": false,
+      "baseline": "rejected_invalid_channel",
+      "candidate": "rejected_invalid_channel",
+      "classification": "unchanged",
+      "baseline_error": {
+        "message": "inbound authenticity denied (reason=invalid_channel, mode=warn)",
+        "type": "RuntimeError"
+      },
+      "candidate_error": {
+        "message": "inbound authenticity denied (reason=invalid_channel, mode=warn)",
+        "type": "RuntimeError"
+      }
+    }
+  ],
+  "complete": true,
+  "verdict": "compatible",
+  "exit_code": 0
+}
